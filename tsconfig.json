@@ -8,6 +8,7 @@
       "./typings/globals"
     ],
     "sourceMap": true,
-    "jsx": "react"
+    "jsx": "react",
+    "noUnusedLocals":true
   }
 }

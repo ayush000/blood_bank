@@ -8,8 +8,8 @@ const listener = app.listen(3000, () => {
 });
 
 app.get('/', (req, res) => {
-  console.log("a");
+  console.log('a');
   res.send('done');
 });
-app.set("view options", { layout: false });
-app.use(express.static(path.join(__dirname, '../../dist')))
+app.set('view options', { layout: false });
+app.use(express.static(path.join(__dirname, '../../dist')));
