@@ -1,15 +1,13 @@
 import * as React from "react";
 import Map = require('esri/Map');
-import SceneView = require('esri/views/SceneView');
+import MapView = require('esri/views/MapView');
 
 function MapDiv() {
   const map = new Map({ basemap: "streets" });
 
-  var view = new SceneView({
+  var view = new MapView({
     container: "viewDiv",
     map: map,
-    scale: 50000000,
-    center: [-101.17, 21.78]
   });
   return (
     <div></div >
