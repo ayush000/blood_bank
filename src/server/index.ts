@@ -3,7 +3,9 @@ import * as path from 'path';
 
 const app = express();
 
-app.listen(3000);
+const listener = app.listen(3000, () => {
+  console.log(`Listening on port ${listener.address().port}`)
+});
 
 app.get('/', (req, res) => {
   console.log("a");
