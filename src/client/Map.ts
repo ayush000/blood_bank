@@ -4,10 +4,13 @@ import Locate = require('esri/widgets/Locate');
 import MapView = require('esri/views/MapView');
 import Search = require('esri/widgets/Search');
 
+let view;
+let locateBtn;
+
 export default function () {
   const map = new Map({ basemap: 'streets' });
 
-  let view = new MapView({
+  view = new MapView({
     container: 'viewDiv',
     map: map,
     center: [76.75110710, 30.716816812],
@@ -17,7 +20,7 @@ export default function () {
   view.constraints = {
     maxZoom: 18,
   };
-  const locateBtn = new Locate({
+  locateBtn = new Locate({
     view: view,
   });
   locateBtn.startup();
@@ -40,4 +43,14 @@ export default function () {
   view.on('layerview-create', () => {
     locateBtn.locate();
   });
+  // const saveAction = {
+  //   // This text is displayed as a tool tip
+  //   title: 'Save',
+  //   id: 'save',
+  //   // An icon font provided by the API
+  //   className: 'esri-icon-save',
+  // };
+
 }
+
+export { view, locateBtn };
