@@ -5,6 +5,7 @@
   "dependencies": {
     "@types/dojo": "^1.9.36",
     "@types/express": "^4.0.34",
+    "@types/immutability-helper": "^2.0.15",
     "@types/material-ui": "^0.16.44",
     "@types/node": "^6.0.52",
     "@types/react": "^0.14.55",
@@ -12,6 +13,9 @@
     "@types/react-tap-event-plugin": "^0.0.30",
     "awesome-typescript-loader": "^3.0.0-beta.17",
     "express": "^4.14.0",
+    "formsy-material-ui": "^0.5.3",
+    "formsy-react": "^0.19.0",
+    "immutability-helper": "^2.0.0",
     "material-ui": "^0.16.5",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
