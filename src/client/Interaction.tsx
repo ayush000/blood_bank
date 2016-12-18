@@ -21,8 +21,6 @@ class Button extends React.Component<MyProps, MyState> {
 
     addDonorHandler(event) {
         if (this.state.isDonor) {
-            console.log('adsfdasf');
-            console.log(event);
             view.popup.open({
                 title: `[${Math.round(event.mapPoint.latitude * 1000) / 1000},
       ${Math.round(event.mapPoint.longitude * 1000) / 1000}] Add donor`,
