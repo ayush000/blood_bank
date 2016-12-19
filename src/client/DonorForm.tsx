@@ -100,8 +100,9 @@ class DonorForm extends React.Component<MyProps, MyState> {
 interface DialogProps {
     dialogBoxOpen: boolean;
     closeDialogHandler: Function;
-    latitude: number;
-    longitude: number;
+    address: any;
+    // latitude: number;
+    // longitude: number;
 }
 interface DialogState { }
 class DonorDialog extends React.Component<DialogProps, DialogState> {
@@ -110,7 +111,7 @@ class DonorDialog extends React.Component<DialogProps, DialogState> {
             <Dialog
                 contentStyle={{ width: '100%', maxWidth: '470px' }}
                 autoScrollBodyContent={true}
-                title={`(${this.props.latitude},${this.props.longitude}) Add as donor`}
+                title={`Add as donor ${this.props.address}`}
                 modal={false}
                 open={this.props.dialogBoxOpen}
                 onRequestClose={() => {
