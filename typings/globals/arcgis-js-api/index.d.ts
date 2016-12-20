@@ -744,7 +744,7 @@ declare namespace __esri {
   }
 
   interface EventedConstructor {
-    new(): Evented;
+    new (): Evented;
 
 
     hasEventListener(type: string): boolean;
@@ -766,7 +766,7 @@ declare namespace __esri {
   }
 
   interface BasemapConstructor {
-    new(properties?: BasemapProperties): Basemap;
+    new (properties?: BasemapProperties): Basemap;
 
 
     fromId(id: string): Basemap;
@@ -796,7 +796,7 @@ declare namespace __esri {
   }
 
   interface CameraConstructor {
-    new(properties?: CameraProperties): Camera;
+    new (properties?: CameraProperties): Camera;
 
     fromJSON(json: any): Camera;
   }
@@ -828,7 +828,7 @@ declare namespace __esri {
   interface ColorConstructor {
 
     blendColors(start: Color, end: Color, weight: number, obj?: Color): Color;
-    new(color: string | number[] | any): Color;
+    new (color: string | number[] | any): Color;
     fromArray(a: number, obj?: Color): Color;
     fromHex(color: string, obj?: Color): Color;
     fromJSON(json: any): Color;
@@ -852,7 +852,7 @@ declare namespace __esri {
   }
 
   interface GraphicConstructor {
-    new(properties?: GraphicProperties): Graphic;
+    new (properties?: GraphicProperties): Graphic;
 
     fromJSON(json: any): Graphic;
   }
@@ -874,7 +874,7 @@ declare namespace __esri {
   }
 
   interface GroundConstructor {
-    new(properties?: GroundProperties): Ground;
+    new (properties?: GroundProperties): Ground;
   }
 
   export const Ground: GroundConstructor;
@@ -890,7 +890,7 @@ declare namespace __esri {
   }
 
   interface MapConstructor {
-    new(properties?: MapProperties): Map;
+    new (properties?: MapProperties): Map;
   }
 
   export const Map: MapConstructor;
@@ -912,7 +912,7 @@ declare namespace __esri {
   }
 
   interface PopupTemplateConstructor {
-    new(properties?: PopupTemplateProperties): PopupTemplate;
+    new (properties?: PopupTemplateProperties): PopupTemplate;
 
     fromJSON(json: any): PopupTemplate;
   }
@@ -937,7 +937,7 @@ declare namespace __esri {
   }
 
   interface ViewpointConstructor {
-    new(properties?: ViewpointProperties): Viewpoint;
+    new (properties?: ViewpointProperties): Viewpoint;
 
     fromJSON(json: any): Viewpoint;
   }
@@ -968,7 +968,7 @@ declare namespace __esri {
   }
 
   interface WebMapConstructor {
-    new(properties?: WebMapProperties): WebMap;
+    new (properties?: WebMapProperties): WebMap;
   }
 
   export const WebMap: WebMapConstructor;
@@ -1006,7 +1006,7 @@ declare namespace __esri {
   }
 
   interface WebSceneConstructor {
-    new(properties?: WebSceneProperties): WebScene;
+    new (properties?: WebSceneProperties): WebScene;
 
 
     fromJSON(json: any): any;
@@ -1035,7 +1035,7 @@ declare namespace __esri {
   }
 
   interface AccessorConstructor {
-    new(): Accessor;
+    new (): Accessor;
   }
 
   export const Accessor: AccessorConstructor;
@@ -1079,7 +1079,7 @@ declare namespace __esri {
   }
 
   interface CollectionConstructor {
-    new(properties?: CollectionProperties): Collection;
+    new (properties?: CollectionProperties): Collection;
 
 
     ofType(type: any): any;
@@ -1100,7 +1100,7 @@ declare namespace __esri {
   }
 
   interface CircleConstructor {
-    new(properties?: CircleProperties): Circle;
+    new (properties?: CircleProperties): Circle;
 
     fromJSON(json: any): Circle;
   }
@@ -1139,7 +1139,7 @@ declare namespace __esri {
   }
 
   interface ExtentConstructor {
-    new(properties?: ExtentProperties): Extent;
+    new (properties?: ExtentProperties): Extent;
 
     fromJSON(json: any): Extent;
   }
@@ -1172,7 +1172,7 @@ declare namespace __esri {
   }
 
   interface GeometryConstructor {
-    new(properties?: GeometryProperties): Geometry;
+    new (properties?: GeometryProperties): Geometry;
 
     fromJSON(json: any): Geometry;
   }
@@ -1198,7 +1198,7 @@ declare namespace __esri {
   }
 
   interface MultipointConstructor {
-    new(properties?: MultipointProperties): Multipoint;
+    new (properties?: MultipointProperties): Multipoint;
 
     fromJSON(json: any): Multipoint;
   }
@@ -1223,7 +1223,7 @@ declare namespace __esri {
   }
 
   interface PointConstructor {
-    new(properties?: PointProperties): Point;
+    new (properties?: PointProperties): Point;
 
     fromJSON(json: any): Point;
   }
@@ -1255,7 +1255,7 @@ declare namespace __esri {
   }
 
   interface PolygonConstructor {
-    new(properties?: PolygonProperties): Polygon;
+    new (properties?: PolygonProperties): Polygon;
 
     fromJSON(json: any): Polygon;
   }
@@ -1280,7 +1280,7 @@ declare namespace __esri {
   }
 
   interface PolylineConstructor {
-    new(properties?: PolylineProperties): Polyline;
+    new (properties?: PolylineProperties): Polyline;
 
     fromJSON(json: any): Polyline;
   }
@@ -1297,7 +1297,7 @@ declare namespace __esri {
   }
 
   interface ScreenPointConstructor {
-    new(properties?: ScreenPointProperties): ScreenPoint;
+    new (properties?: ScreenPointProperties): ScreenPoint;
   }
 
   export const ScreenPoint: ScreenPointConstructor;
@@ -1321,7 +1321,7 @@ declare namespace __esri {
   }
 
   interface SpatialReferenceConstructor {
-    new(properties?: SpatialReferenceProperties): SpatialReference;
+    new (properties?: SpatialReferenceProperties): SpatialReference;
 
     fromJSON(json: any): SpatialReference;
   }
@@ -1352,7 +1352,7 @@ declare namespace __esri {
   }
 
   interface CredentialConstructor {
-    new(properties?: CredentialProperties): Credential;
+    new (properties?: CredentialProperties): Credential;
   }
 
   export const Credential: CredentialConstructor;
@@ -1390,7 +1390,7 @@ declare namespace __esri {
   }
 
   interface IdentityManagerBaseConstructor {
-    new(): IdentityManagerBase;
+    new (): IdentityManagerBase;
   }
 
   export const IdentityManagerBase: IdentityManagerBaseConstructor;
@@ -1403,7 +1403,7 @@ declare namespace __esri {
   }
 
   interface IdentityManagerConstructor {
-    new(): IdentityManager;
+    new (): IdentityManager;
   }
 
   export const IdentityManager: IdentityManagerConstructor;
@@ -1424,7 +1424,7 @@ declare namespace __esri {
   }
 
   interface OAuthInfoConstructor {
-    new(properties?: any): OAuthInfo;
+    new (properties?: any): OAuthInfo;
   }
 
   export const OAuthInfo: OAuthInfoConstructor;
@@ -1440,7 +1440,7 @@ declare namespace __esri {
   }
 
   interface ServerInfoConstructor {
-    new(properties?: any): ServerInfo;
+    new (properties?: any): ServerInfo;
   }
 
   export const ServerInfo: ServerInfoConstructor;
@@ -1450,7 +1450,7 @@ declare namespace __esri {
   }
 
   interface ElevationLayerConstructor {
-    new(properties?: ElevationLayerProperties): ElevationLayer;
+    new (properties?: ElevationLayerProperties): ElevationLayer;
 
     fromJSON(json: any): ElevationLayer;
   }
@@ -1471,7 +1471,7 @@ declare namespace __esri {
   }
 
   interface ImageryLayerConstructor {
-    new(properties?: ImageryLayerProperties): ImageryLayer;
+    new (properties?: ImageryLayerProperties): ImageryLayer;
 
     fromJSON(json: any): ImageryLayer;
   }
@@ -1489,7 +1489,7 @@ declare namespace __esri {
   }
 
   interface MapImageLayerConstructor {
-    new(properties?: MapImageLayerProperties): MapImageLayer;
+    new (properties?: MapImageLayerProperties): MapImageLayer;
 
     fromJSON(json: any): MapImageLayer;
   }
@@ -1509,7 +1509,7 @@ declare namespace __esri {
   }
 
   interface TileLayerConstructor {
-    new(properties?: TileLayerProperties): TileLayer;
+    new (properties?: TileLayerProperties): TileLayer;
 
     fromJSON(json: any): TileLayer;
   }
@@ -1544,7 +1544,7 @@ declare namespace __esri {
   }
 
   interface CSVLayerConstructor {
-    new(properties?: CSVLayerProperties): CSVLayer;
+    new (properties?: CSVLayerProperties): CSVLayer;
   }
 
   export const CSVLayer: CSVLayerConstructor;
@@ -1602,7 +1602,7 @@ declare namespace __esri {
   }
 
   interface FeatureLayerConstructor {
-    new(properties?: FeatureLayerProperties): FeatureLayer;
+    new (properties?: FeatureLayerProperties): FeatureLayer;
 
     fromJSON(json: any): FeatureLayer;
   }
@@ -1629,7 +1629,7 @@ declare namespace __esri {
     renderer?: RendererProperties;
     returnM?: boolean;
     returnZ?: boolean;
-    source?: Collection;
+    source?: Array<Object>;
     spatialReference?: SpatialReferenceProperties;
     token?: string;
     url?: string;
@@ -1648,7 +1648,7 @@ declare namespace __esri {
   }
 
   interface GraphicsLayerConstructor {
-    new(properties?: GraphicsLayerProperties): GraphicsLayer;
+    new (properties?: GraphicsLayerProperties): GraphicsLayer;
   }
 
   export const GraphicsLayer: GraphicsLayerConstructor;
@@ -1663,7 +1663,7 @@ declare namespace __esri {
   }
 
   interface GroupLayerConstructor {
-    new(properties?: GroupLayerProperties): GroupLayer;
+    new (properties?: GroupLayerProperties): GroupLayer;
 
     fromJSON(json: any): GroupLayer;
   }
@@ -1679,7 +1679,7 @@ declare namespace __esri {
   }
 
   interface IntegratedMeshLayerConstructor {
-    new(properties?: IntegratedMeshLayerProperties): IntegratedMeshLayer;
+    new (properties?: IntegratedMeshLayerProperties): IntegratedMeshLayer;
 
     fromJSON(json: any): IntegratedMeshLayer;
   }
@@ -1703,7 +1703,7 @@ declare namespace __esri {
   }
 
   interface LayerConstructor {
-    new(properties?: LayerProperties): Layer;
+    new (properties?: LayerProperties): Layer;
 
 
     fromArcGISServerUrl(params: LayerFromArcGISServerUrlParams): IPromise<any>;
@@ -1726,7 +1726,7 @@ declare namespace __esri {
   }
 
   interface OpenStreetMapLayerConstructor {
-    new(properties?: OpenStreetMapLayerProperties): OpenStreetMapLayer;
+    new (properties?: OpenStreetMapLayerProperties): OpenStreetMapLayer;
 
     fromJSON(json: any): OpenStreetMapLayer;
   }
@@ -1756,7 +1756,7 @@ declare namespace __esri {
   }
 
   interface SceneLayerConstructor {
-    new(properties?: SceneLayerProperties): SceneLayer;
+    new (properties?: SceneLayerProperties): SceneLayer;
 
     fromJSON(json: any): SceneLayer;
   }
@@ -1783,7 +1783,7 @@ declare namespace __esri {
   }
 
   interface StreamLayerConstructor {
-    new(properties?: StreamLayerProperties): StreamLayer;
+    new (properties?: StreamLayerProperties): StreamLayer;
 
     fromJSON(json: any): StreamLayer;
   }
@@ -1800,7 +1800,7 @@ declare namespace __esri {
   }
 
   interface UnknownLayerConstructor {
-    new(properties?: UnknownLayerProperties): UnknownLayer;
+    new (properties?: UnknownLayerProperties): UnknownLayer;
   }
 
   export const UnknownLayer: UnknownLayerConstructor;
@@ -1813,7 +1813,7 @@ declare namespace __esri {
   }
 
   interface UnsupportedLayerConstructor {
-    new(properties?: UnsupportedLayerProperties): UnsupportedLayer;
+    new (properties?: UnsupportedLayerProperties): UnsupportedLayer;
   }
 
   export const UnsupportedLayer: UnsupportedLayerConstructor;
@@ -1833,7 +1833,7 @@ declare namespace __esri {
   }
 
   interface VectorTileLayerConstructor {
-    new(properties?: VectorTileLayerProperties): VectorTileLayer;
+    new (properties?: VectorTileLayerProperties): VectorTileLayer;
 
     fromJSON(json: any): VectorTileLayer;
   }
@@ -1857,7 +1857,7 @@ declare namespace __esri {
   }
 
   interface WebTileLayerConstructor {
-    new(properties?: WebTileLayerProperties): WebTileLayer;
+    new (properties?: WebTileLayerProperties): WebTileLayer;
 
     fromJSON(json: any): WebTileLayer;
   }
@@ -1877,7 +1877,7 @@ declare namespace __esri {
   }
 
   interface CodedValueDomainConstructor {
-    new(properties?: any): CodedValueDomain;
+    new (properties?: any): CodedValueDomain;
 
     getName(code: string | number): string;
   }
@@ -1894,7 +1894,7 @@ declare namespace __esri {
   }
 
   interface DimensionalDefinitionConstructor {
-    new(properties?: any): DimensionalDefinition;
+    new (properties?: any): DimensionalDefinition;
   }
 
   export const DimensionalDefinition: DimensionalDefinitionConstructor;
@@ -1907,7 +1907,7 @@ declare namespace __esri {
   }
 
   interface DomainConstructor {
-    new(): Domain;
+    new (): Domain;
   }
 
   export const Domain: DomainConstructor;
@@ -1923,7 +1923,7 @@ declare namespace __esri {
   }
 
   interface FieldConstructor {
-    new(properties?: FieldProperties): Field;
+    new (properties?: FieldProperties): Field;
 
     fromJSON(json: any): Field;
   }
@@ -1947,7 +1947,7 @@ declare namespace __esri {
   }
 
   interface ImageParametersConstructor {
-    new(properties?: any): ImageParameters;
+    new (properties?: any): ImageParameters;
   }
 
   export const ImageParameters: ImageParametersConstructor;
@@ -1956,7 +1956,7 @@ declare namespace __esri {
   }
 
   interface InheritedDomainConstructor {
-    new(): InheritedDomain;
+    new (): InheritedDomain;
   }
 
   export const InheritedDomain: InheritedDomainConstructor;
@@ -1973,7 +1973,7 @@ declare namespace __esri {
   }
 
   interface LabelClassConstructor {
-    new(properties?: LabelClassProperties): LabelClass;
+    new (properties?: LabelClassProperties): LabelClass;
 
     fromJSON(json: any): LabelClass;
   }
@@ -1999,7 +1999,7 @@ declare namespace __esri {
   }
 
   interface LODConstructor {
-    new(properties?: LODProperties): LOD;
+    new (properties?: LODProperties): LOD;
 
     fromJSON(json: any): LOD;
   }
@@ -2024,7 +2024,7 @@ declare namespace __esri {
   }
 
   interface MapImageConstructor {
-    new(properties?: MapImageProperties): MapImage;
+    new (properties?: MapImageProperties): MapImage;
 
     fromJSON(json: any): MapImage;
   }
@@ -2055,7 +2055,7 @@ declare namespace __esri {
   }
 
   interface MosaicRuleConstructor {
-    new(properties?: MosaicRuleProperties): MosaicRule;
+    new (properties?: MosaicRuleProperties): MosaicRule;
 
     fromJSON(json: any): MosaicRule;
   }
@@ -2090,7 +2090,7 @@ declare namespace __esri {
   }
 
   interface PixelBlockConstructor {
-    new(properties?: any): PixelBlock;
+    new (properties?: any): PixelBlock;
   }
 
   export const PixelBlock: PixelBlockConstructor;
@@ -2101,7 +2101,7 @@ declare namespace __esri {
   }
 
   interface RangeDomainConstructor {
-    new(): RangeDomain;
+    new (): RangeDomain;
   }
 
   export const RangeDomain: RangeDomainConstructor;
@@ -2114,7 +2114,7 @@ declare namespace __esri {
   }
 
   interface RasterFunctionConstructor {
-    new(properties?: RasterFunctionProperties): RasterFunction;
+    new (properties?: RasterFunctionProperties): RasterFunction;
 
     fromJSON(json: any): RasterFunction;
   }
@@ -2151,7 +2151,7 @@ declare namespace __esri {
   }
 
   interface SublayerConstructor {
-    new(properties?: SublayerProperties): Sublayer;
+    new (properties?: SublayerProperties): Sublayer;
   }
 
   export const Sublayer: SublayerConstructor;
@@ -2184,7 +2184,7 @@ declare namespace __esri {
   }
 
   interface TileInfoConstructor {
-    new(properties?: TileInfoProperties): TileInfo;
+    new (properties?: TileInfoProperties): TileInfo;
 
     fromJSON(json: any): TileInfo;
   }
@@ -2264,7 +2264,7 @@ declare namespace __esri {
   }
 
   interface PortalConstructor {
-    new(properties?: PortalProperties): Portal;
+    new (properties?: PortalProperties): Portal;
 
 
     getDefault(): Portal;
@@ -2338,7 +2338,7 @@ declare namespace __esri {
   }
 
   interface PortalFolderConstructor {
-    new(properties?: PortalFolderProperties): PortalFolder;
+    new (properties?: PortalFolderProperties): PortalFolder;
   }
 
   export const PortalFolder: PortalFolderConstructor;
@@ -2370,7 +2370,7 @@ declare namespace __esri {
   }
 
   interface PortalGroupConstructor {
-    new(properties?: PortalGroupProperties): PortalGroup;
+    new (properties?: PortalGroupProperties): PortalGroup;
   }
 
   export const PortalGroup: PortalGroupConstructor;
@@ -2418,7 +2418,7 @@ declare namespace __esri {
   }
 
   interface PortalItemConstructor {
-    new(properties?: PortalItemProperties): PortalItem;
+    new (properties?: PortalItemProperties): PortalItem;
 
     fromJSON(json: any): PortalItem;
   }
@@ -2460,7 +2460,7 @@ declare namespace __esri {
   }
 
   interface PortalQueryParamsConstructor {
-    new(properties?: PortalQueryParamsProperties): PortalQueryParams;
+    new (properties?: PortalQueryParamsProperties): PortalQueryParams;
   }
 
   export const PortalQueryParams: PortalQueryParamsConstructor;
@@ -2482,7 +2482,7 @@ declare namespace __esri {
   }
 
   interface PortalQueryResultConstructor {
-    new(properties?: PortalQueryResultProperties): PortalQueryResult;
+    new (properties?: PortalQueryResultProperties): PortalQueryResult;
   }
 
   export const PortalQueryResult: PortalQueryResultConstructor;
@@ -2521,7 +2521,7 @@ declare namespace __esri {
   }
 
   interface PortalUserConstructor {
-    new(properties?: PortalUserProperties): PortalUser;
+    new (properties?: PortalUserProperties): PortalUser;
   }
 
   export const PortalUser: PortalUserConstructor;
@@ -2563,7 +2563,7 @@ declare namespace __esri {
   }
 
   interface ClassBreaksRendererConstructor {
-    new(properties?: ClassBreaksRendererProperties): ClassBreaksRenderer;
+    new (properties?: ClassBreaksRendererProperties): ClassBreaksRenderer;
 
     fromJSON(json: any): ClassBreaksRenderer;
   }
@@ -2586,7 +2586,7 @@ declare namespace __esri {
   }
 
   interface RendererConstructor {
-    new(properties?: RendererProperties): Renderer;
+    new (properties?: RendererProperties): Renderer;
 
     fromJSON(json: any): Renderer;
   }
@@ -2606,7 +2606,7 @@ declare namespace __esri {
   }
 
   interface SimpleRendererConstructor {
-    new(properties?: SimpleRendererProperties): SimpleRenderer;
+    new (properties?: SimpleRendererProperties): SimpleRenderer;
 
     fromJSON(json: any): SimpleRenderer;
   }
@@ -2636,7 +2636,7 @@ declare namespace __esri {
   }
 
   interface UniqueValueRendererConstructor {
-    new(properties?: UniqueValueRendererProperties): UniqueValueRenderer;
+    new (properties?: UniqueValueRendererProperties): UniqueValueRenderer;
 
     fromJSON(json: any): UniqueValueRenderer;
   }
@@ -2661,7 +2661,7 @@ declare namespace __esri {
   }
 
   interface ExtrudeSymbol3DLayerConstructor {
-    new(properties?: ExtrudeSymbol3DLayerProperties): ExtrudeSymbol3DLayer;
+    new (properties?: ExtrudeSymbol3DLayerProperties): ExtrudeSymbol3DLayer;
 
     fromJSON(json: any): ExtrudeSymbol3DLayer;
   }
@@ -2677,7 +2677,7 @@ declare namespace __esri {
   }
 
   interface FillSymbolConstructor {
-    new(properties?: FillSymbolProperties): FillSymbol;
+    new (properties?: FillSymbolProperties): FillSymbol;
 
     fromJSON(json: any): FillSymbol;
   }
@@ -2695,7 +2695,7 @@ declare namespace __esri {
   }
 
   interface FillSymbol3DLayerConstructor {
-    new(properties?: FillSymbol3DLayerProperties): FillSymbol3DLayer;
+    new (properties?: FillSymbol3DLayerProperties): FillSymbol3DLayer;
 
     fromJSON(json: any): FillSymbol3DLayer;
   }
@@ -2711,7 +2711,7 @@ declare namespace __esri {
   }
 
   interface FontConstructor {
-    new(properties?: FontProperties): Font;
+    new (properties?: FontProperties): Font;
 
     fromJSON(json: any): Font;
   }
@@ -2732,7 +2732,7 @@ declare namespace __esri {
   }
 
   interface IconSymbol3DLayerConstructor {
-    new(properties?: IconSymbol3DLayerProperties): IconSymbol3DLayer;
+    new (properties?: IconSymbol3DLayerProperties): IconSymbol3DLayer;
 
     fromJSON(json: any): IconSymbol3DLayer;
   }
@@ -2751,7 +2751,7 @@ declare namespace __esri {
   }
 
   interface LabelSymbol3DConstructor {
-    new(properties?: LabelSymbol3DProperties): LabelSymbol3D;
+    new (properties?: LabelSymbol3DProperties): LabelSymbol3D;
 
     fromJSON(json: any): LabelSymbol3D;
   }
@@ -2768,7 +2768,7 @@ declare namespace __esri {
   }
 
   interface LineSymbolConstructor {
-    new(properties?: LineSymbolProperties): LineSymbol;
+    new (properties?: LineSymbolProperties): LineSymbol;
 
     fromJSON(json: any): LineSymbol;
   }
@@ -2785,7 +2785,7 @@ declare namespace __esri {
   }
 
   interface LineSymbol3DConstructor {
-    new(properties?: LineSymbol3DProperties): LineSymbol3D;
+    new (properties?: LineSymbol3DProperties): LineSymbol3D;
 
     fromJSON(json: any): LineSymbol3D;
   }
@@ -2803,7 +2803,7 @@ declare namespace __esri {
   }
 
   interface LineSymbol3DLayerConstructor {
-    new(properties?: LineSymbol3DLayerProperties): LineSymbol3DLayer;
+    new (properties?: LineSymbol3DLayerProperties): LineSymbol3DLayer;
 
     fromJSON(json: any): LineSymbol3DLayer;
   }
@@ -2821,7 +2821,7 @@ declare namespace __esri {
   }
 
   interface MarkerSymbolConstructor {
-    new(properties?: MarkerSymbolProperties): MarkerSymbol;
+    new (properties?: MarkerSymbolProperties): MarkerSymbol;
 
     fromJSON(json: any): MarkerSymbol;
   }
@@ -2839,7 +2839,7 @@ declare namespace __esri {
   }
 
   interface MeshSymbol3DConstructor {
-    new(properties?: MeshSymbol3DProperties): MeshSymbol3D;
+    new (properties?: MeshSymbol3DProperties): MeshSymbol3D;
 
     fromJSON(json: any): MeshSymbol3D;
   }
@@ -2862,7 +2862,7 @@ declare namespace __esri {
   }
 
   interface ObjectSymbol3DLayerConstructor {
-    new(properties?: ObjectSymbol3DLayerProperties): ObjectSymbol3DLayer;
+    new (properties?: ObjectSymbol3DLayerProperties): ObjectSymbol3DLayer;
 
     fromJSON(json: any): ObjectSymbol3DLayer;
   }
@@ -2889,7 +2889,7 @@ declare namespace __esri {
   }
 
   interface PictureFillSymbolConstructor {
-    new(properties?: PictureFillSymbolProperties): PictureFillSymbol;
+    new (properties?: PictureFillSymbolProperties): PictureFillSymbol;
 
     fromJSON(json: any): PictureFillSymbol;
   }
@@ -2915,7 +2915,7 @@ declare namespace __esri {
   }
 
   interface PictureMarkerSymbolConstructor {
-    new(properties?: PictureMarkerSymbolProperties): PictureMarkerSymbol;
+    new (properties?: PictureMarkerSymbolProperties): PictureMarkerSymbol;
 
     fromJSON(json: any): PictureMarkerSymbol;
   }
@@ -2935,7 +2935,7 @@ declare namespace __esri {
   }
 
   interface PathSymbol3DLayerConstructor {
-    new(properties?: PathSymbol3DLayerProperties): PathSymbol3DLayer;
+    new (properties?: PathSymbol3DLayerProperties): PathSymbol3DLayer;
 
     fromJSON(json: any): PathSymbol3DLayer;
   }
@@ -2951,7 +2951,7 @@ declare namespace __esri {
   }
 
   interface PointSymbol3DConstructor {
-    new(properties?: PointSymbol3DProperties): PointSymbol3D;
+    new (properties?: PointSymbol3DProperties): PointSymbol3D;
 
     fromJSON(json: any): PointSymbol3D;
   }
@@ -2967,7 +2967,7 @@ declare namespace __esri {
   }
 
   interface PolygonSymbol3DConstructor {
-    new(properties?: PolygonSymbol3DProperties): PolygonSymbol3D;
+    new (properties?: PolygonSymbol3DProperties): PolygonSymbol3D;
 
     fromJSON(json: any): PolygonSymbol3D;
   }
@@ -2986,7 +2986,7 @@ declare namespace __esri {
   }
 
   interface SimpleFillSymbolConstructor {
-    new(properties?: SimpleFillSymbolProperties): SimpleFillSymbol;
+    new (properties?: SimpleFillSymbolProperties): SimpleFillSymbol;
 
     fromJSON(json: any): SimpleFillSymbol;
   }
@@ -3005,7 +3005,7 @@ declare namespace __esri {
   }
 
   interface SimpleLineSymbolConstructor {
-    new(properties?: SimpleLineSymbolProperties): SimpleLineSymbol;
+    new (properties?: SimpleLineSymbolProperties): SimpleLineSymbol;
 
     fromJSON(json: any): SimpleLineSymbol;
   }
@@ -3027,7 +3027,7 @@ declare namespace __esri {
   }
 
   interface SimpleMarkerSymbolConstructor {
-    new(properties?: SimpleMarkerSymbolProperties): SimpleMarkerSymbol;
+    new (properties?: SimpleMarkerSymbolProperties): SimpleMarkerSymbol;
 
     fromJSON(json: any): SimpleMarkerSymbol;
   }
@@ -3047,7 +3047,7 @@ declare namespace __esri {
   }
 
   interface SymbolConstructor {
-    new(properties?: SymbolProperties): Symbol;
+    new (properties?: SymbolProperties): Symbol;
 
     fromJSON(json: any): Symbol;
   }
@@ -3063,7 +3063,7 @@ declare namespace __esri {
   }
 
   interface Symbol3DConstructor {
-    new(properties?: Symbol3DProperties): Symbol3D;
+    new (properties?: Symbol3DProperties): Symbol3D;
 
     fromJSON(json: any): Symbol3D;
   }
@@ -3080,7 +3080,7 @@ declare namespace __esri {
   }
 
   interface Symbol3DLayerConstructor {
-    new(properties?: Symbol3DLayerProperties): Symbol3DLayer;
+    new (properties?: Symbol3DLayerProperties): Symbol3DLayer;
 
     fromJSON(json: any): Symbol3DLayer;
   }
@@ -3113,7 +3113,7 @@ declare namespace __esri {
   }
 
   interface TextSymbolConstructor {
-    new(properties?: TextSymbolProperties): TextSymbol;
+    new (properties?: TextSymbolProperties): TextSymbol;
 
     fromJSON(json: any): TextSymbol;
   }
@@ -3147,7 +3147,7 @@ declare namespace __esri {
   }
 
   interface TextSymbol3DLayerConstructor {
-    new(properties?: TextSymbol3DLayerProperties): TextSymbol3DLayer;
+    new (properties?: TextSymbol3DLayerProperties): TextSymbol3DLayer;
 
     fromJSON(json: any): TextSymbol3DLayer;
   }
@@ -3171,7 +3171,7 @@ declare namespace __esri {
   }
 
   interface WebStyleSymbolConstructor {
-    new(properties?: WebStyleSymbolProperties): WebStyleSymbol;
+    new (properties?: WebStyleSymbolProperties): WebStyleSymbol;
 
     fromJSON(json: any): WebStyleSymbol;
   }
@@ -3190,7 +3190,7 @@ declare namespace __esri {
   }
 
   interface ClosestFacilityTaskConstructor {
-    new(properties?: ClosestFacilityTaskProperties): ClosestFacilityTask;
+    new (properties?: ClosestFacilityTaskProperties): ClosestFacilityTask;
   }
 
   export const ClosestFacilityTask: ClosestFacilityTaskConstructor;
@@ -3206,7 +3206,7 @@ declare namespace __esri {
   }
 
   interface FindTaskConstructor {
-    new(properties?: FindTaskProperties): FindTask;
+    new (properties?: FindTaskProperties): FindTask;
   }
 
   export const FindTask: FindTaskConstructor;
@@ -3240,7 +3240,7 @@ declare namespace __esri {
   }
 
   interface GeometryServiceConstructor {
-    new(properties?: GeometryServiceProperties): GeometryService;
+    new (properties?: GeometryServiceProperties): GeometryService;
   }
 
   export const GeometryService: GeometryServiceConstructor;
@@ -3265,7 +3265,7 @@ declare namespace __esri {
   }
 
   interface GeoprocessorConstructor {
-    new(properties?: GeoprocessorProperties): Geoprocessor;
+    new (properties?: GeoprocessorProperties): Geoprocessor;
   }
 
   export const Geoprocessor: GeoprocessorConstructor;
@@ -3283,7 +3283,7 @@ declare namespace __esri {
   }
 
   interface IdentifyTaskConstructor {
-    new(properties?: IdentifyTaskProperties): IdentifyTask;
+    new (properties?: IdentifyTaskProperties): IdentifyTask;
   }
 
   export const IdentifyTask: IdentifyTaskConstructor;
@@ -3297,7 +3297,7 @@ declare namespace __esri {
   }
 
   interface ImageServiceIdentifyTaskConstructor {
-    new(properties?: ImageServiceIdentifyTaskProperties): ImageServiceIdentifyTask;
+    new (properties?: ImageServiceIdentifyTaskProperties): ImageServiceIdentifyTask;
   }
 
   export const ImageServiceIdentifyTask: ImageServiceIdentifyTaskConstructor;
@@ -3318,7 +3318,7 @@ declare namespace __esri {
   }
 
   interface LocatorConstructor {
-    new(properties?: LocatorProperties): Locator;
+    new (properties?: LocatorProperties): Locator;
   }
 
   export const Locator: LocatorConstructor;
@@ -3340,7 +3340,7 @@ declare namespace __esri {
   }
 
   interface QueryTaskConstructor {
-    new(properties?: QueryTaskProperties): QueryTask;
+    new (properties?: QueryTaskProperties): QueryTask;
   }
 
   export const QueryTask: QueryTaskConstructor;
@@ -3357,7 +3357,7 @@ declare namespace __esri {
   }
 
   interface PrintTaskConstructor {
-    new(properties?: PrintTaskProperties): PrintTask;
+    new (properties?: PrintTaskProperties): PrintTask;
   }
 
   export const PrintTask: PrintTaskConstructor;
@@ -3372,7 +3372,7 @@ declare namespace __esri {
   }
 
   interface RouteTaskConstructor {
-    new(properties?: RouteTaskProperties): RouteTask;
+    new (properties?: RouteTaskProperties): RouteTask;
   }
 
   export const RouteTask: RouteTaskConstructor;
@@ -3386,7 +3386,7 @@ declare namespace __esri {
   }
 
   interface ServiceAreaTaskConstructor {
-    new(properties?: ServiceAreaTaskProperties): ServiceAreaTask;
+    new (properties?: ServiceAreaTaskProperties): ServiceAreaTask;
   }
 
   export const ServiceAreaTask: ServiceAreaTaskConstructor;
@@ -3400,7 +3400,7 @@ declare namespace __esri {
   }
 
   interface TaskConstructor {
-    new(properties?: TaskProperties): Task;
+    new (properties?: TaskProperties): Task;
   }
 
   export const Task: TaskConstructor;
@@ -3418,7 +3418,7 @@ declare namespace __esri {
   }
 
   interface AddressCandidateConstructor {
-    new(properties?: AddressCandidateProperties): AddressCandidate;
+    new (properties?: AddressCandidateProperties): AddressCandidate;
 
     fromJSON(json: any): AddressCandidate;
   }
@@ -3443,7 +3443,7 @@ declare namespace __esri {
   }
 
   interface AreasAndLengthsParametersConstructor {
-    new(properties?: AreasAndLengthsParametersProperties): AreasAndLengthsParameters;
+    new (properties?: AreasAndLengthsParametersProperties): AreasAndLengthsParameters;
   }
 
   export const AreasAndLengthsParameters: AreasAndLengthsParametersConstructor;
@@ -3468,7 +3468,7 @@ declare namespace __esri {
   }
 
   interface BufferParametersConstructor {
-    new(properties?: BufferParametersProperties): BufferParameters;
+    new (properties?: BufferParametersProperties): BufferParameters;
   }
 
   export const BufferParameters: BufferParametersConstructor;
@@ -3522,7 +3522,7 @@ declare namespace __esri {
   }
 
   interface ClosestFacilityParametersConstructor {
-    new(properties?: ClosestFacilityParametersProperties): ClosestFacilityParameters;
+    new (properties?: ClosestFacilityParametersProperties): ClosestFacilityParameters;
   }
 
   export const ClosestFacilityParameters: ClosestFacilityParametersConstructor;
@@ -3575,7 +3575,7 @@ declare namespace __esri {
   }
 
   interface ClosestFacilitySolveResultConstructor {
-    new(properties?: ClosestFacilitySolveResultProperties): ClosestFacilitySolveResult;
+    new (properties?: ClosestFacilitySolveResultProperties): ClosestFacilitySolveResult;
 
     fromJSON(json: any): ClosestFacilitySolveResult;
   }
@@ -3599,7 +3599,7 @@ declare namespace __esri {
   }
 
   interface DataFileConstructor {
-    new(properties?: DataFileProperties): DataFile;
+    new (properties?: DataFileProperties): DataFile;
 
     fromJSON(json: any): DataFile;
   }
@@ -3621,7 +3621,7 @@ declare namespace __esri {
   }
 
   interface DataLayerConstructor {
-    new(properties?: DataLayerProperties): DataLayer;
+    new (properties?: DataLayerProperties): DataLayer;
   }
 
   export const DataLayer: DataLayerConstructor;
@@ -3639,7 +3639,7 @@ declare namespace __esri {
   }
 
   interface supportDateConstructor {
-    new(properties?: supportDateProperties): supportDate;
+    new (properties?: supportDateProperties): supportDate;
 
     fromJSON(json: any): supportDate;
   }
@@ -3661,7 +3661,7 @@ declare namespace __esri {
   }
 
   interface DensifyParametersConstructor {
-    new(properties?: DensifyParametersProperties): DensifyParameters;
+    new (properties?: DensifyParametersProperties): DensifyParameters;
   }
 
   export const DensifyParameters: DensifyParametersConstructor;
@@ -3685,7 +3685,7 @@ declare namespace __esri {
   }
 
   interface DirectionsFeatureSetConstructor {
-    new(properties?: DirectionsFeatureSetProperties): DirectionsFeatureSet;
+    new (properties?: DirectionsFeatureSetProperties): DirectionsFeatureSet;
 
     fromJSON(json: any): DirectionsFeatureSet;
   }
@@ -3713,7 +3713,7 @@ declare namespace __esri {
   }
 
   interface DistanceParametersConstructor {
-    new(properties?: DistanceParametersProperties): DistanceParameters;
+    new (properties?: DistanceParametersProperties): DistanceParameters;
   }
 
   export const DistanceParameters: DistanceParametersConstructor;
@@ -3735,7 +3735,7 @@ declare namespace __esri {
   }
 
   interface FeatureSetConstructor {
-    new(properties?: FeatureSetProperties): FeatureSet;
+    new (properties?: FeatureSetProperties): FeatureSet;
 
     fromJSON(json: any): FeatureSet;
   }
@@ -3765,7 +3765,7 @@ declare namespace __esri {
   }
 
   interface FindParametersConstructor {
-    new(properties?: FindParametersProperties): FindParameters;
+    new (properties?: FindParametersProperties): FindParameters;
   }
 
   export const FindParameters: FindParametersConstructor;
@@ -3790,7 +3790,7 @@ declare namespace __esri {
   }
 
   interface FindResultConstructor {
-    new(properties?: FindResultProperties): FindResult;
+    new (properties?: FindResultProperties): FindResult;
 
     fromJSON(json: any): FindResult;
   }
@@ -3814,7 +3814,7 @@ declare namespace __esri {
   }
 
   interface GeneralizeParametersConstructor {
-    new(properties?: GeneralizeParametersProperties): GeneralizeParameters;
+    new (properties?: GeneralizeParametersProperties): GeneralizeParameters;
   }
 
   export const GeneralizeParameters: GeneralizeParametersConstructor;
@@ -3831,7 +3831,7 @@ declare namespace __esri {
   }
 
   interface GPMessageConstructor {
-    new(properties?: GPMessageProperties): GPMessage;
+    new (properties?: GPMessageProperties): GPMessage;
 
     fromJSON(json: any): GPMessage;
   }
@@ -3861,7 +3861,7 @@ declare namespace __esri {
   }
 
   interface IdentifyParametersConstructor {
-    new(properties?: IdentifyParametersProperties): IdentifyParameters;
+    new (properties?: IdentifyParametersProperties): IdentifyParameters;
   }
 
   export const IdentifyParameters: IdentifyParametersConstructor;
@@ -3889,7 +3889,7 @@ declare namespace __esri {
   }
 
   interface IdentifyResultConstructor {
-    new(properties?: IdentifyResultProperties): IdentifyResult;
+    new (properties?: IdentifyResultProperties): IdentifyResult;
 
     fromJSON(json: any): IdentifyResult;
   }
@@ -3918,7 +3918,7 @@ declare namespace __esri {
   }
 
   interface ImageServiceIdentifyParametersConstructor {
-    new(properties?: ImageServiceIdentifyParametersProperties): ImageServiceIdentifyParameters;
+    new (properties?: ImageServiceIdentifyParametersProperties): ImageServiceIdentifyParameters;
   }
 
   export const ImageServiceIdentifyParameters: ImageServiceIdentifyParametersConstructor;
@@ -3946,7 +3946,7 @@ declare namespace __esri {
   }
 
   interface ImageServiceIdentifyResultConstructor {
-    new(properties?: ImageServiceIdentifyResultProperties): ImageServiceIdentifyResult;
+    new (properties?: ImageServiceIdentifyResultProperties): ImageServiceIdentifyResult;
 
     fromJSON(json: any): ImageServiceIdentifyResult;
   }
@@ -3970,7 +3970,7 @@ declare namespace __esri {
   }
 
   interface JobInfoConstructor {
-    new(properties?: JobInfoProperties): JobInfo;
+    new (properties?: JobInfoProperties): JobInfo;
 
     fromJSON(json: any): JobInfo;
   }
@@ -3990,7 +3990,7 @@ declare namespace __esri {
   }
 
   interface LegendLayerConstructor {
-    new(properties?: LegendLayerProperties): LegendLayer;
+    new (properties?: LegendLayerProperties): LegendLayer;
   }
 
   export const LegendLayer: LegendLayerConstructor;
@@ -4011,7 +4011,7 @@ declare namespace __esri {
   }
 
   interface LengthsParametersConstructor {
-    new(properties?: LengthsParametersProperties): LengthsParameters;
+    new (properties?: LengthsParametersProperties): LengthsParameters;
   }
 
   export const LengthsParameters: LengthsParametersConstructor;
@@ -4029,7 +4029,7 @@ declare namespace __esri {
   }
 
   interface LinearUnitConstructor {
-    new(properties?: LinearUnitProperties): LinearUnit;
+    new (properties?: LinearUnitProperties): LinearUnit;
 
     fromJSON(json: any): LinearUnit;
   }
@@ -4047,7 +4047,7 @@ declare namespace __esri {
   }
 
   interface NAMessageConstructor {
-    new(properties?: NAMessageProperties): NAMessage;
+    new (properties?: NAMessageProperties): NAMessage;
 
     fromJSON(json: any): NAMessage;
   }
@@ -4070,7 +4070,7 @@ declare namespace __esri {
   }
 
   interface OffsetParametersConstructor {
-    new(properties?: OffsetParametersProperties): OffsetParameters;
+    new (properties?: OffsetParametersProperties): OffsetParameters;
   }
 
   export const OffsetParameters: OffsetParametersConstructor;
@@ -4089,7 +4089,7 @@ declare namespace __esri {
   }
 
   interface ParameterValueConstructor {
-    new(properties?: ParameterValueProperties): ParameterValue;
+    new (properties?: ParameterValueProperties): ParameterValue;
 
     fromJSON(json: any): ParameterValue;
   }
@@ -4109,7 +4109,7 @@ declare namespace __esri {
   }
 
   interface PrintParametersConstructor {
-    new(properties?: PrintParametersProperties): PrintParameters;
+    new (properties?: PrintParametersProperties): PrintParameters;
   }
 
   export const PrintParameters: PrintParametersConstructor;
@@ -4133,7 +4133,7 @@ declare namespace __esri {
   }
 
   interface PrintTemplateConstructor {
-    new(properties?: PrintTemplateProperties): PrintTemplate;
+    new (properties?: PrintTemplateProperties): PrintTemplate;
   }
 
   export const PrintTemplate: PrintTemplateConstructor;
@@ -4159,7 +4159,7 @@ declare namespace __esri {
   }
 
   interface ProjectParametersConstructor {
-    new(properties?: ProjectParametersProperties): ProjectParameters;
+    new (properties?: ProjectParametersProperties): ProjectParameters;
   }
 
   export const ProjectParameters: ProjectParametersConstructor;
@@ -4200,7 +4200,7 @@ declare namespace __esri {
   }
 
   interface QueryConstructor {
-    new(properties?: QueryProperties): Query;
+    new (properties?: QueryProperties): Query;
   }
 
   export const Query: QueryConstructor;
@@ -4238,7 +4238,7 @@ declare namespace __esri {
   }
 
   interface RasterDataConstructor {
-    new(properties?: RasterDataProperties): RasterData;
+    new (properties?: RasterDataProperties): RasterData;
 
     fromJSON(json: any): RasterData;
   }
@@ -4261,7 +4261,7 @@ declare namespace __esri {
   }
 
   interface RelationParametersConstructor {
-    new(properties?: RelationParametersProperties): RelationParameters;
+    new (properties?: RelationParametersProperties): RelationParameters;
   }
 
   export const RelationParameters: RelationParametersConstructor;
@@ -4287,7 +4287,7 @@ declare namespace __esri {
   }
 
   interface RelationshipQueryConstructor {
-    new(properties?: RelationshipQueryProperties): RelationshipQuery;
+    new (properties?: RelationshipQueryProperties): RelationshipQuery;
   }
 
   export const RelationshipQuery: RelationshipQueryConstructor;
@@ -4343,7 +4343,7 @@ declare namespace __esri {
   }
 
   interface RouteParametersConstructor {
-    new(properties?: RouteParametersProperties): RouteParameters;
+    new (properties?: RouteParametersProperties): RouteParameters;
   }
 
   export const RouteParameters: RouteParametersConstructor;
@@ -4393,7 +4393,7 @@ declare namespace __esri {
   }
 
   interface RouteResultConstructor {
-    new(properties?: RouteResultProperties): RouteResult;
+    new (properties?: RouteResultProperties): RouteResult;
 
     fromJSON(json: any): RouteResult;
   }
@@ -4445,7 +4445,7 @@ declare namespace __esri {
   }
 
   interface ServiceAreaParametersConstructor {
-    new(properties?: ServiceAreaParametersProperties): ServiceAreaParameters;
+    new (properties?: ServiceAreaParametersProperties): ServiceAreaParameters;
   }
 
   export const ServiceAreaParameters: ServiceAreaParametersConstructor;
@@ -4496,7 +4496,7 @@ declare namespace __esri {
   }
 
   interface ServiceAreaSolveResultConstructor {
-    new(properties?: ServiceAreaSolveResultProperties): ServiceAreaSolveResult;
+    new (properties?: ServiceAreaSolveResultProperties): ServiceAreaSolveResult;
 
     fromJSON(json: any): ServiceAreaSolveResult;
   }
@@ -4522,7 +4522,7 @@ declare namespace __esri {
   }
 
   interface StatisticDefinitionConstructor {
-    new(properties?: StatisticDefinitionProperties): StatisticDefinition;
+    new (properties?: StatisticDefinitionProperties): StatisticDefinition;
   }
 
   export const StatisticDefinition: StatisticDefinitionConstructor;
@@ -4542,7 +4542,7 @@ declare namespace __esri {
   }
 
   interface TrimExtendParametersConstructor {
-    new(properties?: TrimExtendParametersProperties): TrimExtendParameters;
+    new (properties?: TrimExtendParametersProperties): TrimExtendParameters;
   }
 
   export const TrimExtendParameters: TrimExtendParametersConstructor;
@@ -4570,7 +4570,7 @@ declare namespace __esri {
   }
 
   interface MapViewConstructor {
-    new(properties?: MapViewProperties): MapView;
+    new (properties?: MapViewProperties): MapView;
   }
 
   export const MapView: MapViewConstructor;
@@ -4606,7 +4606,7 @@ declare namespace __esri {
   }
 
   interface SceneViewConstructor {
-    new(properties?: SceneViewProperties): SceneView;
+    new (properties?: SceneViewProperties): SceneView;
   }
 
   export const SceneView: SceneViewConstructor;
@@ -4646,7 +4646,7 @@ declare namespace __esri {
   }
 
   interface ViewConstructor {
-    new(properties?: ViewProperties): View;
+    new (properties?: ViewProperties): View;
   }
 
   export const View: ViewConstructor;
@@ -4678,7 +4678,7 @@ declare namespace __esri {
   }
 
   interface ViewAnimationConstructor {
-    new(properties?: ViewAnimationProperties): ViewAnimation;
+    new (properties?: ViewAnimationProperties): ViewAnimation;
   }
 
   export const ViewAnimation: ViewAnimationConstructor;
@@ -4696,7 +4696,7 @@ declare namespace __esri {
   }
 
   interface LayerViewConstructor {
-    new(properties?: LayerViewProperties): LayerView;
+    new (properties?: LayerViewProperties): LayerView;
   }
 
   export const LayerView: LayerViewConstructor;
@@ -4716,7 +4716,7 @@ declare namespace __esri {
   }
 
   interface FeatureLayerViewConstructor {
-    new(properties?: FeatureLayerViewProperties): FeatureLayerView;
+    new (properties?: FeatureLayerViewProperties): FeatureLayerView;
   }
 
   export const FeatureLayerView: FeatureLayerViewConstructor;
@@ -4730,7 +4730,7 @@ declare namespace __esri {
   }
 
   interface GraphicsLayerViewConstructor {
-    new(properties?: GraphicsLayerViewProperties): GraphicsLayerView;
+    new (properties?: GraphicsLayerViewProperties): GraphicsLayerView;
   }
 
   export const GraphicsLayerView: GraphicsLayerViewConstructor;
@@ -4744,7 +4744,7 @@ declare namespace __esri {
   }
 
   interface ImageryLayerViewConstructor {
-    new(properties?: ImageryLayerViewProperties): ImageryLayerView;
+    new (properties?: ImageryLayerViewProperties): ImageryLayerView;
   }
 
   export const ImageryLayerView: ImageryLayerViewConstructor;
@@ -4767,7 +4767,7 @@ declare namespace __esri {
   }
 
   interface UIConstructor {
-    new(properties?: UIProperties): UI;
+    new (properties?: UIProperties): UI;
   }
 
   export const UI: UIConstructor;
@@ -4785,7 +4785,7 @@ declare namespace __esri {
   }
 
   interface DefaultUIConstructor {
-    new(properties?: DefaultUIProperties): DefaultUI;
+    new (properties?: DefaultUIProperties): DefaultUI;
   }
 
   export const DefaultUI: DefaultUIConstructor;
@@ -4802,7 +4802,7 @@ declare namespace __esri {
   }
 
   interface InitialViewPropertiesConstructor {
-    new(properties?: InitialViewPropertiesProperties): InitialViewProperties;
+    new (properties?: InitialViewPropertiesProperties): InitialViewProperties;
   }
 
   export const InitialViewProperties: InitialViewPropertiesConstructor;
@@ -4819,7 +4819,7 @@ declare namespace __esri {
   }
 
   interface EnvironmentConstructor {
-    new(properties?: EnvironmentProperties): Environment;
+    new (properties?: EnvironmentProperties): Environment;
   }
 
   export const Environment: EnvironmentConstructor;
@@ -4838,7 +4838,7 @@ declare namespace __esri {
   }
 
   interface websceneInitialViewPropertiesConstructor {
-    new(properties?: websceneInitialViewPropertiesProperties): websceneInitialViewProperties;
+    new (properties?: websceneInitialViewPropertiesProperties): websceneInitialViewProperties;
   }
 
   export const websceneInitialViewProperties: websceneInitialViewPropertiesConstructor;
@@ -4859,7 +4859,7 @@ declare namespace __esri {
   }
 
   interface LightingConstructor {
-    new(properties?: LightingProperties): Lighting;
+    new (properties?: LightingProperties): Lighting;
   }
 
   export const Lighting: LightingConstructor;
@@ -4877,7 +4877,7 @@ declare namespace __esri {
   }
 
   interface PresentationConstructor {
-    new(properties?: PresentationProperties): Presentation;
+    new (properties?: PresentationProperties): Presentation;
   }
 
   export const Presentation: PresentationConstructor;
@@ -4902,7 +4902,7 @@ declare namespace __esri {
   }
 
   interface SlideConstructor {
-    new(properties?: SlideProperties): Slide;
+    new (properties?: SlideProperties): Slide;
 
 
     createFrom(view: SceneView, options?: SlideCreateFromOptions): IPromise<any>;
@@ -4927,7 +4927,7 @@ declare namespace __esri {
   }
 
   interface AttributionConstructor {
-    new(properties?: any, srcNodeRef?: string | any): Attribution;
+    new (properties?: any, srcNodeRef?: string | any): Attribution;
   }
 
   export const Attribution: AttributionConstructor;
@@ -4943,7 +4943,7 @@ declare namespace __esri {
   }
 
   interface BasemapToggleConstructor {
-    new(properties?: any, srcNodeRef?: string | any): BasemapToggle;
+    new (properties?: any, srcNodeRef?: string | any): BasemapToggle;
   }
 
   export const BasemapToggle: BasemapToggleConstructor;
@@ -4956,7 +4956,7 @@ declare namespace __esri {
   }
 
   interface CompassConstructor {
-    new(properties?: any, srcNodeRef?: string | any): Compass;
+    new (properties?: any, srcNodeRef?: string | any): Compass;
   }
 
   export const Compass: CompassConstructor;
@@ -4970,7 +4970,7 @@ declare namespace __esri {
   }
 
   interface HomeConstructor {
-    new(properties?: any, srcNodeRef?: string | any): Home;
+    new (properties?: any, srcNodeRef?: string | any): Home;
   }
 
   export const Home: HomeConstructor;
@@ -4981,7 +4981,7 @@ declare namespace __esri {
   }
 
   interface LegendConstructor {
-    new(properties: any, srcNodeRef?: string | any): Legend;
+    new (properties: any, srcNodeRef?: string | any): Legend;
   }
 
   export const Legend: LegendConstructor;
@@ -4997,7 +4997,7 @@ declare namespace __esri {
   }
 
   interface LocateConstructor {
-    new(properties?: any, srcNodeRef?: string | any): Locate;
+    new (properties?: any, srcNodeRef?: string | any): Locate;
   }
 
   export const Locate: LocateConstructor;
@@ -5011,7 +5011,7 @@ declare namespace __esri {
   }
 
   interface NavigationToggleConstructor {
-    new(properties?: any, srcNodeRef?: string | any): NavigationToggle;
+    new (properties?: any, srcNodeRef?: string | any): NavigationToggle;
   }
 
   export const NavigationToggle: NavigationToggleConstructor;
@@ -5043,7 +5043,7 @@ declare namespace __esri {
   }
 
   interface PopupConstructor {
-    new(properties?: any, srcNodeRef?: string | any): Popup;
+    new (properties?: any, srcNodeRef?: string | any): Popup;
   }
 
   export const Popup: PopupConstructor;
@@ -5078,7 +5078,7 @@ declare namespace __esri {
   }
 
   interface SearchConstructor {
-    new(properties?: any, srcNodeRef?: string | any): Search;
+    new (properties?: any, srcNodeRef?: string | any): Search;
   }
 
   export const Search: SearchConstructor;
@@ -5096,7 +5096,7 @@ declare namespace __esri {
   }
 
   interface TrackConstructor {
-    new(properties?: any, srcNodeRef?: string | any): Track;
+    new (properties?: any, srcNodeRef?: string | any): Track;
   }
 
   export const Track: TrackConstructor;
@@ -5109,7 +5109,7 @@ declare namespace __esri {
   }
 
   interface WidgetConstructor {
-    new(): Widget;
+    new (): Widget;
   }
 
   export const Widget: WidgetConstructor;
@@ -5123,7 +5123,7 @@ declare namespace __esri {
   }
 
   interface ZoomConstructor {
-    new(properties?: any, srcNodeRef?: string | any): Zoom;
+    new (properties?: any, srcNodeRef?: string | any): Zoom;
   }
 
   export const Zoom: ZoomConstructor;
@@ -5136,7 +5136,7 @@ declare namespace __esri {
   }
 
   interface AttributionViewModelConstructor {
-    new(properties?: any): AttributionViewModel;
+    new (properties?: any): AttributionViewModel;
   }
 
   export const AttributionViewModel: AttributionViewModelConstructor;
@@ -5151,7 +5151,7 @@ declare namespace __esri {
   }
 
   interface BasemapToggleViewModelConstructor {
-    new(properties?: BasemapToggleViewModelProperties): BasemapToggleViewModel;
+    new (properties?: BasemapToggleViewModelProperties): BasemapToggleViewModel;
   }
 
   export const BasemapToggleViewModel: BasemapToggleViewModelConstructor;
@@ -5171,7 +5171,7 @@ declare namespace __esri {
   }
 
   interface CompassViewModelConstructor {
-    new(properties?: CompassViewModelProperties): CompassViewModel;
+    new (properties?: CompassViewModelProperties): CompassViewModel;
   }
 
   export const CompassViewModel: CompassViewModelConstructor;
@@ -5190,7 +5190,7 @@ declare namespace __esri {
   }
 
   interface HomeViewModelConstructor {
-    new(properties?: HomeViewModelProperties): HomeViewModel;
+    new (properties?: HomeViewModelProperties): HomeViewModel;
   }
 
   export const HomeViewModel: HomeViewModelConstructor;
@@ -5208,7 +5208,7 @@ declare namespace __esri {
   }
 
   interface LocateViewModelConstructor {
-    new(properties?: LocateViewModelProperties): LocateViewModel;
+    new (properties?: LocateViewModelProperties): LocateViewModel;
   }
 
   export const LocateViewModel: LocateViewModelConstructor;
@@ -5226,7 +5226,7 @@ declare namespace __esri {
   }
 
   interface NavigationToggleViewModelConstructor {
-    new(properties?: NavigationToggleViewModelProperties): NavigationToggleViewModel;
+    new (properties?: NavigationToggleViewModelProperties): NavigationToggleViewModel;
   }
 
   export const NavigationToggleViewModel: NavigationToggleViewModelConstructor;
@@ -5258,7 +5258,7 @@ declare namespace __esri {
   }
 
   interface PopupViewModelConstructor {
-    new(properties?: PopupViewModelProperties): PopupViewModel;
+    new (properties?: PopupViewModelProperties): PopupViewModel;
   }
 
   export const PopupViewModel: PopupViewModelConstructor;
@@ -5311,7 +5311,7 @@ declare namespace __esri {
   }
 
   interface SearchViewModelConstructor {
-    new(properties?: SearchViewModelProperties): SearchViewModel;
+    new (properties?: SearchViewModelProperties): SearchViewModel;
   }
 
   export const SearchViewModel: SearchViewModelConstructor;
@@ -5352,7 +5352,7 @@ declare namespace __esri {
   }
 
   interface TrackViewModelConstructor {
-    new(properties?: TrackViewModelProperties): TrackViewModel;
+    new (properties?: TrackViewModelProperties): TrackViewModel;
   }
 
   export const TrackViewModel: TrackViewModelConstructor;
@@ -5373,7 +5373,7 @@ declare namespace __esri {
   }
 
   interface ZoomViewModelConstructor {
-    new(properties?: ZoomViewModelProperties): ZoomViewModel;
+    new (properties?: ZoomViewModelProperties): ZoomViewModel;
   }
 
   export const ZoomViewModel: ZoomViewModelConstructor;
@@ -5390,7 +5390,7 @@ declare namespace __esri {
   }
 
   interface JSONSupportConstructor {
-    new(): JSONSupport;
+    new (): JSONSupport;
 
 
     fromJSON(json: any): any;
@@ -5414,7 +5414,7 @@ declare namespace __esri {
   }
 
   interface LoadableConstructor {
-    new(): Loadable;
+    new (): Loadable;
   }
 
   export const Loadable: LoadableConstructor;
@@ -5435,7 +5435,7 @@ declare namespace __esri {
   }
 
   interface corePromiseConstructor {
-    new(): corePromise;
+    new (): corePromise;
   }
 
   export const corePromise: corePromiseConstructor;
@@ -5448,7 +5448,7 @@ declare namespace __esri {
   }
 
   interface DynamicLayerConstructor {
-    new(): DynamicLayer;
+    new (): DynamicLayer;
   }
 
   export const DynamicLayer: DynamicLayerConstructor;
@@ -5465,7 +5465,7 @@ declare namespace __esri {
   }
 
   interface TiledLayerConstructor {
-    new(properties?: TiledLayerProperties): TiledLayer;
+    new (properties?: TiledLayerProperties): TiledLayer;
 
     fromJSON(json: any): TiledLayer;
   }
@@ -5486,7 +5486,7 @@ declare namespace __esri {
   }
 
   interface ArcGISCachedServiceConstructor {
-    new(properties?: ArcGISCachedServiceProperties): ArcGISCachedService;
+    new (properties?: ArcGISCachedServiceProperties): ArcGISCachedService;
 
     fromJSON(json: any): ArcGISCachedService;
   }
@@ -5513,7 +5513,7 @@ declare namespace __esri {
   }
 
   interface ArcGISDynamicMapServiceConstructor {
-    new(): ArcGISDynamicMapService;
+    new (): ArcGISDynamicMapService;
   }
 
   export const ArcGISDynamicMapService: ArcGISDynamicMapServiceConstructor;
@@ -5555,7 +5555,7 @@ declare namespace __esri {
   }
 
   interface ArcGISImageServiceConstructor {
-    new(properties?: ArcGISImageServiceProperties): ArcGISImageService;
+    new (properties?: ArcGISImageServiceProperties): ArcGISImageService;
 
     fromJSON(json: any): ArcGISImageService;
   }
@@ -5594,7 +5594,7 @@ declare namespace __esri {
   }
 
   interface ArcGISMapServiceConstructor {
-    new(properties?: ArcGISMapServiceProperties): ArcGISMapService;
+    new (properties?: ArcGISMapServiceProperties): ArcGISMapService;
 
     fromJSON(json: any): ArcGISMapService;
   }
@@ -5613,7 +5613,7 @@ declare namespace __esri {
   }
 
   interface PortalLayerConstructor {
-    new(properties?: PortalLayerProperties): PortalLayer;
+    new (properties?: PortalLayerProperties): PortalLayer;
 
     fromJSON(json: any): PortalLayer;
   }
@@ -5630,7 +5630,7 @@ declare namespace __esri {
   }
 
   interface ScaleRangeLayerConstructor {
-    new(): ScaleRangeLayer;
+    new (): ScaleRangeLayer;
   }
 
   export const ScaleRangeLayer: ScaleRangeLayerConstructor;
@@ -5649,7 +5649,7 @@ declare namespace __esri {
   }
 
   interface SceneServiceConstructor {
-    new(properties?: SceneServiceProperties): SceneService;
+    new (properties?: SceneServiceProperties): SceneService;
 
     fromJSON(json: any): SceneService;
   }
@@ -5677,7 +5677,7 @@ declare namespace __esri {
   }
 
   interface LayersMixinConstructor {
-    new(): LayersMixin;
+    new (): LayersMixin;
   }
 
   export const LayersMixin: LayersMixinConstructor;
@@ -5694,7 +5694,7 @@ declare namespace __esri {
   }
 
   interface BreakpointsOwnerConstructor {
-    new(): BreakpointsOwner;
+    new (): BreakpointsOwner;
   }
 
   export const BreakpointsOwner: BreakpointsOwnerConstructor;
@@ -5715,7 +5715,7 @@ declare namespace __esri {
   }
 
   interface DOMContainerConstructor {
-    new(): DOMContainer;
+    new (): DOMContainer;
   }
 
   export const DOMContainer: DOMContainerConstructor;
@@ -5736,7 +5736,7 @@ declare namespace __esri {
   }
 
   interface GeolocationPositioningConstructor {
-    new(): GeolocationPositioning;
+    new (): GeolocationPositioning;
   }
 
   export const GeolocationPositioning: GeolocationPositioningConstructor;

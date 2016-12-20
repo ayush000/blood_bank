@@ -9,6 +9,6 @@
     ],
     "sourceMap": true,
     "jsx": "react",
-    "noUnusedLocals": true
+    "noUnusedLocals": false
   }
 }
