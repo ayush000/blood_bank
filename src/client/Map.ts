@@ -38,7 +38,7 @@ export default function () {
     index: 0,
   });
 
-  view.once('layerview-create', () => {
+  view.on('layerview-create', () => {
     locateBtn.locate();
   });
   // const saveAction = {

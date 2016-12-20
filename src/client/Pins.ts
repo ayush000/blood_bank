@@ -11,25 +11,41 @@ socket.once('connect', () => {
     // Define the specification for each field to create
     //  in the layer
     const fields = [{ name: 'bloodgroup', alias: 'bloodgroup', type: 'string' },
-    { name: 'title', alias: 'title', type: 'string' },
-    { name: 'contact', alias: 'contact', type: 'string' },
-    { name: 'email', alias: 'email', type: 'string' },
-    { name: 'ip', alias: 'ip', type: 'string' },
-    { name: 'fname', alias: 'fname', type: 'string' },
-    { name: 'lname', alias: 'lname', type: 'string' },
-    { name: 'address', alias: 'address', type: 'string' }];
+        // { name: 'title', alias: 'title', type: 'string' },
+        { name: 'contact', alias: 'contact', type: 'string' },
+        { name: 'email', alias: 'email', type: 'string' },
+        // { name: 'fname', alias: 'fname', type: 'string' },
+        // { name: 'lname', alias: 'lname', type: 'string' },
+        { name: 'address', alias: 'address', type: 'string' },
+    ];
     // Define popup template
     const pTemplate = {
-        title: '{title}',
+        title: '[{bloodgroup}] {fname} {lname}',
         content: [{
             type: 'fields',
-            fieldInfos: [{ name: 'bloodgroup', label: 'Blood Group', visible: true },
-            { name: 'contact', label: 'Contact', visible: true },
-            { name: 'email', label: 'Email', visible: true },
-            { name: 'ip', label: 'IP', visible: true },
-            { name: 'fname', label: 'First name', visible: true },
-            { name: 'lname', label: 'Last name', visible: true },
-            { name: 'address', label: 'Address', visible: true }]
+            fieldInfos: [{ fieldName: 'bloodgroup', label: 'Blood Group', visible: true },
+                { fieldName: 'contact', label: 'Contact', visible: true },
+                { fieldName: 'email', label: 'Email', visible: true },
+                // { fieldName: 'ip', label: 'IP', visible: true },
+                // { name: 'fname', label: 'First name', visible: true },
+                // { name: 'lname', label: 'Last name', visible: true },
+                { fieldName: 'address', label: 'Address', visible: true },
+            ],
+        }],
+        fieldInfos: [{
+            fieldName: 'bloodgroup',
+            label: 'Blood Group',
+            visible: true,
+        },
+        {
+            fieldName: 'fname',
+            label: 'First Name',
+            visible: true,
+        },
+        {
+            fieldName: 'lname',
+            label: 'Last Name',
+            visible: true,
         }],
     };
     const donorSym = new SimpleMarkerSymbol({
@@ -45,7 +61,6 @@ socket.once('connect', () => {
         bloodgroup: string,
         contact: string,
         email: string,
-        ip?: string,
         location: {
             type: string,
             coordinates: number[],
@@ -63,12 +78,9 @@ socket.once('connect', () => {
                     latitude: pin.location.coordinates[1],
                 }),
                 attributes: {
-                    title: `[${pin.bloodgroup}] ${pin.name.first} ${pin.name.last}`,
                     bloodgroup: pin.bloodgroup,
                     contact: pin.contact,
                     email: pin.email,
-                    ip: pin.ip,
-                    location: pin.location,
                     fname: pin.name.first,
                     lname: pin.name.last,
                     address: pin.address,

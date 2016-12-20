@@ -157,12 +157,12 @@ declare namespace __esri {
 
   export interface PopupTemplateFieldInfos {
     fieldName: string;
-    format: PopupTemplateFieldInfosFormat;
-    isEditable: boolean;
+    format?: PopupTemplateFieldInfosFormat;
+    isEditable?: boolean;
     label: string;
-    stringFieldOption: string;
-    tooltip: string;
-    visible: boolean;
+    stringFieldOption?: string;
+    tooltip?: string;
+    visible?: boolean;
   }
 
   export interface PopupTemplateFieldInfosFormat {
