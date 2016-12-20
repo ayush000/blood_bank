@@ -4,11 +4,10 @@ import Locate = require('esri/widgets/Locate');
 import MapView = require('esri/views/MapView');
 import Search = require('esri/widgets/Search');
 
-let view;
-let locateBtn;
+let view, locateBtn, map;
 
 export default function () {
-  const map = new Map({ basemap: 'streets' });
+  map = new Map({ basemap: 'streets' });
 
   view = new MapView({
     container: 'viewDiv',
@@ -52,4 +51,4 @@ export default function () {
 
 }
 
-export { view, locateBtn };
+export { view, locateBtn, map };

@@ -5,6 +5,10 @@ import { view } from './Map';
 import { DONOR_LABEL_ADD, LABEL_CANCEL } from './constants';
 import { DonorDialog } from './DonorForm';
 import Locator = require('esri/tasks/Locator');
+import * as io from 'socket.io-client';
+const socket = io('http://localhost:3000');
+require('./Pins');
+// const socket = require('socket.io-client')('http://localhost:3000');
 
 interface MyProps { }
 interface MyState {
@@ -61,10 +65,12 @@ class Button extends React.Component<MyProps, MyState> {
     }
 
     componentWillMount() {
+
         view.on('click', (event) => {
             this.addDonorHandler(event);
         });
     }
+
     componentWillUpdate(nextProps, nextState) {
         if (!nextState.isDonor) {
             view.popup.visible = false;
@@ -92,7 +98,7 @@ class Button extends React.Component<MyProps, MyState> {
                     closeDialogHandler={this.closeDialogHandler}
                     address={this.state.address}
                     latitude={this.state.latitude}
-                    longitude={this.state.longitude} 
+                    longitude={this.state.longitude}
                     disableAddDonor={this.disableAddDonor} />
                 <RaisedButton label={this.state.donorButtonLabel} onTouchTap={() => {
                     this.state.isDonor ? this.disableAddDonor() : this.enableAddDonor();
@@ -103,3 +109,4 @@ class Button extends React.Component<MyProps, MyState> {
 }
 
 export default Button;
+export { socket };

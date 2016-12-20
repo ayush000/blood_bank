@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@types/bluebird@^3.0.36":
+"@types/bluebird@^3.0.36", "@types/bluebird@~3.0.36":
   version "3.0.36"
   resolved "https://registry.yarnpkg.com/@types/bluebird/-/bluebird-3.0.36.tgz#b804ddd1b1a082cf3e2137dfa7b5287f437c29b7"
 
@@ -26,7 +26,7 @@
   dependencies:
     "@types/node" "*"
 
-"@types/express@*", "@types/express@^4.0.34":
+"@types/express@*", "@types/express@^4.0.34", "@types/express@~4.0.34":
   version "4.0.34"
   resolved "https://registry.yarnpkg.com/@types/express/-/express-4.0.34.tgz#cdc0afd69d70d2295b81b3aa47f26f672afcde1c"
   dependencies:
@@ -97,6 +97,10 @@
   dependencies:
     "@types/express-serve-static-core" "*"
     "@types/mime" "*"
+
+"@types/socket.io-client@^1.4.29":
+  version "1.4.29"
+  resolved "https://registry.yarnpkg.com/@types/socket.io-client/-/socket.io-client-1.4.29.tgz#f8743070cee93175e36e0b6a77a8af73e58ccb32"
 
 "@types/socket.io@^1.4.27":
   version "1.4.27"
@@ -680,13 +684,6 @@ diff@^3.0.1:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/diff/-/diff-3.1.0.tgz#9406c73a401e6c2b3ba901c5e2c44eb6a60c5385"
 
-doctrine@^0.7.2:
-  version "0.7.2"
-  resolved "https://registry.yarnpkg.com/doctrine/-/doctrine-0.7.2.tgz#7cb860359ba3be90e040b26b729ce4bfa654c523"
-  dependencies:
-    esutils "^1.1.6"
-    isarray "0.0.1"
-
 domain-browser@^1.1.1:
   version "1.1.7"
   resolved "https://registry.yarnpkg.com/domain-browser/-/domain-browser-1.1.7.tgz#867aa4b093faa05f1de08c06f4d7b21fdf8698bc"
@@ -811,10 +808,6 @@ escape-string-regexp@^1.0.2:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-1.0.5.tgz#1b61c0562190a8dff6ae3bb2cf0200ca130b86d4"
 
-esutils@^1.1.6:
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/esutils/-/esutils-1.1.6.tgz#c01ccaa9ae4b897c6d0c3e210ae52f3c7a844375"
-
 esutils@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/esutils/-/esutils-2.0.2.tgz#0abf4f1caa5bcb1f7a9d8acc6dea4faaa04bac9b"
@@ -840,9 +833,11 @@ expand-range@^1.8.1:
     fill-range "^2.1.0"
 
 express-validator@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/express-validator/-/express-validator-3.1.0.tgz#b205f3c4e2a19a7d32b13bcbc23d682b88ce0719"
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/express-validator/-/express-validator-3.1.1.tgz#d270de231989e09f1b89c4fcf5c04953ab1662c6"
   dependencies:
+    "@types/bluebird" "~3.0.36"
+    "@types/express" "~4.0.34"
     bluebird "^3.4.0"
     lodash "^4.16.0"
     validator "~6.2.0"
@@ -893,14 +888,15 @@ extsprintf@1.0.2:
   resolved "https://registry.yarnpkg.com/extsprintf/-/extsprintf-1.0.2.tgz#e1080e0658e300b06294990cc70e1502235fd550"
 
 fbjs@^0.8.1, fbjs@^0.8.4, fbjs@^0.8.6:
-  version "0.8.6"
-  resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.6.tgz#7eb67d6986b2d5007a9b6e92e0e7cb6f75cad290"
+  version "0.8.7"
+  resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.7.tgz#14fa1653cda5a299f191c92c8c5a1eb8acdbe5eb"
   dependencies:
     core-js "^1.0.0"
     isomorphic-fetch "^2.1.1"
     loose-envify "^1.0.0"
     object-assign "^4.1.0"
     promise "^7.1.1"
+    setimmediate "^1.0.5"
     ua-parser-js "^0.7.9"
 
 filename-regex@^2.0.0:
@@ -1456,16 +1452,6 @@ lodash.throttle@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
 
-lodash.tostring@^4.0.0:
-  version "4.1.4"
-  resolved "https://registry.yarnpkg.com/lodash.tostring/-/lodash.tostring-4.1.4.tgz#560c27d1f8eadde03c2cce198fef5c031d8298fb"
-
-lodash.unescape@4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/lodash.unescape/-/lodash.unescape-4.0.0.tgz#36debfc492b81478471ef974cd3783e202eb6cef"
-  dependencies:
-    lodash.tostring "^4.0.0"
-
 lodash@^4.13.1, lodash@^4.14.0, lodash@^4.16.0:
   version "4.17.2"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.2.tgz#34a3055babe04ce42467b607d700072c7ff6bf42"
@@ -1561,13 +1547,17 @@ mime@1.3.4:
   dependencies:
     brace-expansion "^1.0.0"
 
-minimist@0.0.8, minimist@~0.0.1:
+minimist@0.0.8:
   version "0.0.8"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.8.tgz#857fcabfc3397d2625b8228262e86aa7a011b05d"
 
 minimist@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.0.tgz#a35008b20f41383eec1fb914f4cd5df79a264284"
+
+minimist@~0.0.1:
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-0.0.10.tgz#de3f98543dbf96082be48ad1a0c7cda836301dcf"
 
 "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@~0.5.0, mkdirp@~0.5.1:
   version "0.5.1"
@@ -1591,8 +1581,8 @@ mongodb@2.2.16, mongodb@^2.2.16:
     readable-stream "2.1.5"
 
 mongoose@^4.7.3:
-  version "4.7.3"
-  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-4.7.3.tgz#53db3403b30301158d9a37b4617d31a2541e95cd"
+  version "4.7.4"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-4.7.4.tgz#e92e16ec75ad62f3b56f7209612d65dd25b3f0bd"
   dependencies:
     async "2.1.4"
     bson "~0.5.4"
@@ -2182,7 +2172,7 @@ set-immediate-shim@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/set-immediate-shim/-/set-immediate-shim-1.0.1.tgz#4b2b1b27eb808a9f8dcc481a58e5e56f599f3f61"
 
-setimmediate@^1.0.4:
+setimmediate@^1.0.4, setimmediate@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/setimmediate/-/setimmediate-1.0.5.tgz#290cbb232e306942d7d7ea9b83732ab7856f8285"
 
@@ -2227,7 +2217,7 @@ socket.io-adapter@0.5.0:
     debug "2.3.3"
     socket.io-parser "2.3.1"
 
-socket.io-client@1.7.2:
+socket.io-client@1.7.2, socket.io-client@^1.7.2:
   version "1.7.2"
   resolved "https://registry.yarnpkg.com/socket.io-client/-/socket.io-client-1.7.2.tgz#39fdb0c3dd450e321b7e40cfd83612ec533dd644"
   dependencies:
@@ -2435,14 +2425,7 @@ tough-cookie@~2.3.0:
   dependencies:
     punycode "^1.4.1"
 
-tslint-eslint-rules@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/tslint-eslint-rules/-/tslint-eslint-rules-3.2.0.tgz#5f56bb433896c29c24d9157052abd93e6fdeb33b"
-  dependencies:
-    doctrine "^0.7.2"
-    tslint "^4.0.0"
-
-tslint@^4.0.0, tslint@^4.1.1:
+tslint@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/tslint/-/tslint-4.1.1.tgz#ae15c9478d92eb2f01d5102c69c493ec02d7e7e4"
   dependencies:
@@ -2475,16 +2458,9 @@ type-is@~1.6.13:
     media-typer "0.3.0"
     mime-types "~2.1.13"
 
-typescript-eslint-parser@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/typescript-eslint-parser/-/typescript-eslint-parser-1.0.0.tgz#92afdb10ca802a21253160dad699f433c54686b4"
-  dependencies:
-    lodash.unescape "4.0.0"
-    object-assign "^4.0.1"
-
 typescript@next:
-  version "2.2.0-dev.20161217"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.2.0-dev.20161217.tgz#d78cb0bb4085ba29263f23f110ab20a31cadcf8c"
+  version "2.2.0-dev.20161219"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.2.0-dev.20161219.tgz#651c3a97a2ece104f1d45b7d9f9f5585784be7c7"
 
 ua-parser-js@^0.7.9:
   version "0.7.12"

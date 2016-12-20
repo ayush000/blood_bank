@@ -2776,7 +2776,7 @@ declare namespace __esri {
   export const LineSymbol: LineSymbolConstructor;
 
   interface LineSymbolProperties extends SymbolProperties {
-    color?: Color;
+    color?: Color | string | number[];
     width?: number;
   }
 
@@ -3038,7 +3038,7 @@ declare namespace __esri {
     color?: Color | string;
     outline?: SimpleLineSymbolProperties;
     path?: string;
-    size?: string;
+    size?: string | number;
     style?: string;
   }
 
