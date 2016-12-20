@@ -10,7 +10,7 @@ import TextField from 'material-ui/TextField';
 // import * as url from 'url';
 
 import { checkStatus, parseJSON } from '../shared/commonfunction';
-import { errorMessages } from './constants';
+import { errorMessages, bloodGroups } from './constants';
 
 // const baseUrl: string = 'http://localhost:3000/';
 interface MyProps {
@@ -89,16 +89,12 @@ class DonorForm extends React.Component<MyProps, MyState> {
                     />
                 <FormsySelect
                     name="bloodgroup"
+                    value=""
                     required
                     floatingLabelText="Blood group">
-                    <MenuItem value="A+" primaryText="A+" />
-                    <MenuItem value="A-" primaryText="A-" />
-                    <MenuItem value="B+" primaryText="B+" />
-                    <MenuItem value="B-" primaryText="B-" />
-                    <MenuItem value="O+" primaryText="O+" />
-                    <MenuItem value="O-" primaryText="O-" />
-                    <MenuItem value="AB+" primaryText="AB+" />
-                    <MenuItem value="AB-" primaryText="AB-" />
+                    {Object.keys(bloodGroups).map((bg) => {
+                        return (<MenuItem value={bg} primaryText={bg} key={bg} />);
+                    })}
                 </FormsySelect>
                 <RaisedButton
                     type="submit"

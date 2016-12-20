@@ -10,3 +10,13 @@ export const errorMessages: {
         emailError: 'Please provide a valid email address',
         phoneError: 'Please provide phone number in correct format(+xx xxx xxxx xxx | 00xx xxx xxxx xxx)',
     };
+export const bloodGroups: Object = {
+    'A+': [],
+    'A-': [],
+    'B+': [],
+    'B-': [],
+    'O+': [],
+    'O-': [],
+    'AB+': [],
+    'AB-': [],
+};
