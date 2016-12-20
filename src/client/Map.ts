@@ -3,11 +3,13 @@ import Map = require('esri/Map');
 import Locate = require('esri/widgets/Locate');
 import MapView = require('esri/views/MapView');
 import Search = require('esri/widgets/Search');
-
-let view, locateBtn, map;
+import { socket } from './Interaction';
+import getPinLayer from './PinLayer';
+let view, locateBtn;
 
 export default function () {
-  map = new Map({ basemap: 'streets' });
+
+  const map = new Map({ basemap: 'streets' });
 
   view = new MapView({
     container: 'viewDiv',
@@ -37,10 +39,31 @@ export default function () {
     position: 'top-left',
     index: 0,
   });
-
+  // window.onload = locateBtn.locate
   view.on('layerview-create', () => {
     locateBtn.locate();
   });
+
+  socket.on('allpins', (pins: {
+    bloodgroup: string,
+    contact: string,
+    email: string,
+    location: {
+      type: string,
+      coordinates: number[],
+    },
+    name: {
+      first: string,
+      last: string,
+    },
+    address?: string,
+  }[]) => {
+    map.layers.removeAll();
+    map.add(getPinLayer(pins));
+  });
+
+
+
   // const saveAction = {
   //   // This text is displayed as a tool tip
   //   title: 'Save',
@@ -51,4 +74,4 @@ export default function () {
 
 }
 
-export { view, locateBtn, map };
+export { view, locateBtn };
