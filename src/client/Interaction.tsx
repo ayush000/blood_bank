@@ -11,8 +11,8 @@ interface MyState {
     isDonor: boolean;
     donorButtonLabel: string;
     dialogBoxOpen: boolean;
-    // latitude: number;
-    // longitude: number;
+    latitude: number;
+    longitude: number;
     address: string;
 }
 
@@ -25,8 +25,8 @@ class Button extends React.Component<MyProps, MyState> {
             donorButtonLabel: DONOR_LABEL_ADD,
             dialogBoxOpen: false,
             address: '',
-            // latitude: 0,
-            // longitude: 0,
+            latitude: 0,
+            longitude: 0,
         };
     }
 
@@ -36,8 +36,8 @@ class Button extends React.Component<MyProps, MyState> {
             this.setState({
                 dialogBoxOpen: true,
                 address: '',
-                // latitude: Math.round(event.mapPoint.latitude * 1000) / 1000,
-                // longitude: Math.round(event.mapPoint.longitude * 1000) / 1000,
+                latitude: event.mapPoint.latitude,
+                longitude: event.mapPoint.longitude,
             } as MyState);
 
             // Set up a locator task using the world geocoding service
@@ -47,12 +47,11 @@ class Button extends React.Component<MyProps, MyState> {
             locatorTask.locationToAddress(event.mapPoint)
                 .then((response) => {
                     // If an address is successfully found, print it to the popup's content
-                    this.setState({ address: `(${response.address.Match_addr})`} as MyState);
-                    console.log(response);
+                    this.setState({ address: response.address.Match_addr } as MyState);
                 }).otherwise((err) => {
                     // If the promise fails and no result is found, print a generic message
                     // to the popup's content
-                   this.setState({ address: ''} as MyState);
+                    console.log(err);
                 });
         }
     }
@@ -72,17 +71,31 @@ class Button extends React.Component<MyProps, MyState> {
         }
     }
 
+    disableAddDonor = () => {
+        this.setState({
+            isDonor: false,
+            donorButtonLabel: DONOR_LABEL_ADD,
+        } as MyState);
+    }
+
+    enableAddDonor = () => {
+        this.setState({
+            isDonor: true,
+            donorButtonLabel: LABEL_CANCEL,
+        } as MyState);
+    }
+
     render() {
         return (
             <div>
                 <DonorDialog dialogBoxOpen={this.state.dialogBoxOpen}
                     closeDialogHandler={this.closeDialogHandler}
-                    address={this.state.address} />
+                    address={this.state.address}
+                    latitude={this.state.latitude}
+                    longitude={this.state.longitude} 
+                    disableAddDonor={this.disableAddDonor} />
                 <RaisedButton label={this.state.donorButtonLabel} onTouchTap={() => {
-                    this.setState({
-                        isDonor: !this.state.isDonor,
-                        donorButtonLabel: this.state.isDonor ? DONOR_LABEL_ADD : LABEL_CANCEL,
-                    } as MyState);
+                    this.state.isDonor ? this.disableAddDonor() : this.enableAddDonor();
                 } } />
             </div>
         );

@@ -5,9 +5,19 @@ import FormsyText from 'formsy-material-ui/lib/FormsyText';
 import RaisedButton from 'material-ui/RaisedButton';
 import FormsySelect from 'formsy-material-ui/lib/FormsySelect';
 import MenuItem from 'material-ui/MenuItem';
+// import * as url from 'url';
+
+import { checkStatus, parseJSON } from '../shared/commonfunction';
 import { errorMessages } from './constants';
 
-interface MyProps { }
+// const baseUrl: string = 'http://localhost:3000/';
+interface MyProps {
+    address: string;
+    latitude: number;
+    longitude: number;
+    closeDialogHandler: Function;
+    disableAddDonor: Function;
+}
 interface MyState { canSubmit: boolean; }
 class DonorForm extends React.Component<MyProps, MyState> {
     constructor() {
@@ -25,8 +35,47 @@ class DonorForm extends React.Component<MyProps, MyState> {
             canSubmit: false,
         });
     }
-    submitForm(data) {
-        alert(JSON.stringify(data, null, 4));
+
+    submitForm = (data) => {
+        this.props.closeDialogHandler();
+        // Create new donor from data entered in form
+        const storeFormData = (formData, ip) => {
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    ...formData,
+                    latitude: this.props.latitude,
+                    longitude: this.props.longitude,
+                    address: this.props.address,
+                    ip: ip,
+                }),
+            };
+            fetch('/donor/new', options)
+                .then(checkStatus)
+                .then(parseJSON)
+                .then(urlresponse => {
+                    this.props.disableAddDonor();
+                    alert(`Donor successfully added with following properties\n
+                    ${JSON.stringify(urlresponse, null, 4)}`);
+                }).catch(err => {
+                    console.log(err);
+                })
+                ;
+        };
+        // Get user's IP address
+        fetch('http://freegeoip.net/json/')
+            .then(checkStatus)
+            .then(parseJSON)
+            .then(ipResponse => {
+                storeFormData(data, ipResponse.ip);
+            }).catch(err => {
+                console.log(err);
+                storeFormData(data, null);
+            });
+
     }
     notifyFormError(data) {
         console.error('Form error:', data);
@@ -40,7 +89,7 @@ class DonorForm extends React.Component<MyProps, MyState> {
                 onInvalidSubmit={this.notifyFormError}>
                 <FormsyText
                     name="fname"
-                    validations="isWords"
+                    validations="isAlpha"
                     validationError={errorMessages.wordsError}
                     required
                     hintText="What is your first name?"
@@ -48,7 +97,7 @@ class DonorForm extends React.Component<MyProps, MyState> {
                     />
                 <FormsyText
                     name="lname"
-                    validations="isWords"
+                    validations="isAlpha"
                     validationError={errorMessages.wordsError}
                     required
                     hintText="What is your last name?"
@@ -100,9 +149,10 @@ class DonorForm extends React.Component<MyProps, MyState> {
 interface DialogProps {
     dialogBoxOpen: boolean;
     closeDialogHandler: Function;
-    address: any;
-    // latitude: number;
-    // longitude: number;
+    address: string;
+    latitude: number;
+    longitude: number;
+    disableAddDonor: Function;
 }
 interface DialogState { }
 class DonorDialog extends React.Component<DialogProps, DialogState> {
@@ -111,15 +161,21 @@ class DonorDialog extends React.Component<DialogProps, DialogState> {
             <Dialog
                 contentStyle={{ width: '100%', maxWidth: '470px' }}
                 autoScrollBodyContent={true}
-                title={`Add as donor ${this.props.address}`}
+                title={`Add as donor (${this.props.address || 'Address loading...'})`}
                 modal={false}
                 open={this.props.dialogBoxOpen}
                 onRequestClose={() => {
                     this.props.closeDialogHandler();
                 } }>
-                <DonorForm />
+                <DonorForm address={this.props.address}
+                    disableAddDonor={this.props.disableAddDonor}
+                    closeDialogHandler={this.props.closeDialogHandler}
+                    latitude={this.props.latitude}
+                    longitude={this.props.longitude}
+                    />
             </Dialog>
         );
     }
 }
+
 export { DonorForm, DonorDialog };

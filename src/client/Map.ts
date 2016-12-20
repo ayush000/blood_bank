@@ -39,7 +39,6 @@ export default function () {
     index: 0,
   });
 
-  console.log('1');
   view.on('layerview-create', () => {
     locateBtn.locate();
   });
