@@ -37,6 +37,10 @@
   version "2.0.15"
   resolved "https://registry.yarnpkg.com/@types/immutability-helper/-/immutability-helper-2.0.15.tgz#1bd2d11e850791267a6302ab86107c0b0ad01bfa"
 
+"@types/lodash@^4.14.44":
+  version "4.14.44"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.44.tgz#04585ff0b80d5e434a5f86f15e7964be4f775cba"
+
 "@types/material-ui@^0.16.44":
   version "0.16.44"
   resolved "https://registry.yarnpkg.com/@types/material-ui/-/material-ui-0.16.44.tgz#11299969afae139349ae597172385cb814969793"
@@ -341,6 +345,10 @@ binary-extensions@^1.0.0:
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-1.8.0.tgz#48ec8d16df4377eae5fa5884682480af4d95c774"
 
+bitbar-webpack-progress-plugin@^0.1.3:
+  version "0.1.3"
+  resolved "https://registry.yarnpkg.com/bitbar-webpack-progress-plugin/-/bitbar-webpack-progress-plugin-0.1.3.tgz#e3713b532b1803e7fc8fe1152e6363046818b274"
+
 blob@0.0.4:
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/blob/-/blob-0.0.4.tgz#bcf13052ca54463f30f9fc7e95b9a47630a94921"
@@ -639,6 +647,12 @@ cookie-signature@1.0.6:
 cookie@0.3.1:
   version "0.3.1"
   resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.3.1.tgz#e7e0a1f9ef43b4c8ba925c5c5a96e806d16873bb"
+
+copy-to-clipboard@^3:
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/copy-to-clipboard/-/copy-to-clipboard-3.0.5.tgz#4cd40e7c2ee159bc72d4f06b5bec8f9e0a1a3442"
+  dependencies:
+    toggle-selection "^1.0.3"
 
 core-js@^1.0.0:
   version "1.2.7"
@@ -1497,7 +1511,7 @@ lodash.throttle@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
 
-lodash@^4.13.1, lodash@^4.14.0, lodash@^4.16.0, lodash@^4.5.1:
+lodash@^4.13.1, lodash@^4.14.0, lodash@^4.16.0, lodash@^4.17.2, lodash@^4.5.1:
   version "4.17.2"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.2.tgz#34a3055babe04ce42467b607d700072c7ff6bf42"
 
@@ -2013,6 +2027,12 @@ react-addons-transition-group@^15.0.0:
   version "15.4.1"
   resolved "https://registry.yarnpkg.com/react-addons-transition-group/-/react-addons-transition-group-15.4.1.tgz#27d92717089c5e2db202e654a85b76a41b703acc"
 
+react-copy-to-clipboard@^4.2.3:
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/react-copy-to-clipboard/-/react-copy-to-clipboard-4.2.3.tgz#268c5a0fbde9a95d96145014e7f85110b0e7fb8e"
+  dependencies:
+    copy-to-clipboard "^3"
+
 react-dom@^15.4.1:
   version "15.4.1"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.4.1.tgz#d54c913261aaedb17adc20410d029dcc18a1344a"
@@ -2481,6 +2501,10 @@ to-array@0.1.4:
 to-arraybuffer@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/to-arraybuffer/-/to-arraybuffer-1.0.1.tgz#7d229b1fcc637e466ca081180836a7aabff83f43"
+
+toggle-selection@^1.0.3:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/toggle-selection/-/toggle-selection-1.0.5.tgz#726c703de607193a73c32c7df49cd24950fc574f"
 
 tough-cookie@~2.3.0:
   version "2.3.2"

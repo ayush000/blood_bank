@@ -1,3 +1,4 @@
+var BitBarWebpackProgressPlugin = require("bitbar-webpack-progress-plugin");
 
 module.exports = {
   entry: './src/client/index.tsx',
@@ -6,6 +7,9 @@ module.exports = {
     path: `${__dirname}/dist/js`,
     libraryTarget: 'amd',
   },
+  plugins: [
+    new BitBarWebpackProgressPlugin()
+  ],
 
   // Enable sourcemaps for debugging webpack's output.
   devtool: 'source-map',

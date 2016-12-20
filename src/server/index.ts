@@ -88,21 +88,20 @@ app.post('/donor/new', (req, res) => {
     };
     const donor = new donorModel(donorObj);
     donor.save().then((save_result) => {
-      console.log('save_result');
-      console.log(save_result);
-      return res.send(donorObj);
-    }).catch(err => { throw err; });
+      res.send(save_result);
+      return io;
+    }).then(loadPins)
+      .catch(err => { throw err; });
   });
 });
 
 io.on('connection', function (socket) {
   console.log('A user just connected');
-  loadPins();
+  loadPins(socket);
 });
 
-function loadPins() {
-  donorModel.find({}, (err, donors) => {
-    if (err) throw err;
-    io.emit('allpins', donors);
-  });
+function loadPins(socket) {
+  donorModel.find({}).then(donors => {
+    socket.emit('allpins', donors);
+  }).catch(err => { throw err; });
 }

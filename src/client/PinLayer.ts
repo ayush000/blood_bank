@@ -3,21 +3,21 @@ import SimpleMarkerSymbol = require('esri/symbols/SimpleMarkerSymbol');
 import Point = require('esri/geometry/Point');
 import SimpleRenderer = require('esri/renderers/SimpleRenderer');
 import FeatureLayer = require('esri/layers/FeatureLayer');
-
-export default function getPinLayer(pins: {
-    bloodgroup: string,
-    contact: string,
-    email: string,
+export interface Pin {
+    bloodgroup: string;
+    contact: string;
+    email: string;
     location: {
         type: string,
         coordinates: number[],
-    },
+    };
     name: {
         first: string,
-        last: string,
-    },
-    address?: string,
-}[]): FeatureLayer {
+        last: string;
+    };
+    address?: string;
+}
+export default function getPinLayer(pins: Pin[]): FeatureLayer {
     // Define the specification for each field to create
     //  in the layer
     const fields = [{ name: 'bloodgroup', alias: 'bloodgroup', type: 'string' },

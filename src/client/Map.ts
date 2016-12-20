@@ -3,9 +3,10 @@ import Map = require('esri/Map');
 import Locate = require('esri/widgets/Locate');
 import MapView = require('esri/views/MapView');
 import Search = require('esri/widgets/Search');
-import { socket } from './Interaction';
-import getPinLayer from './PinLayer';
+import { socket } from './socket';
+import getPinLayer, { Pin } from './PinLayer';
 let view, locateBtn;
+
 
 export default function () {
 
@@ -40,24 +41,12 @@ export default function () {
     index: 0,
   });
   // window.onload = locateBtn.locate
-  view.on('layerview-create', () => {
-    locateBtn.locate();
-  });
+  // view.on('layerview-create', () => {
+  //   locateBtn.locate();
+  // });
 
-  socket.on('allpins', (pins: {
-    bloodgroup: string,
-    contact: string,
-    email: string,
-    location: {
-      type: string,
-      coordinates: number[],
-    },
-    name: {
-      first: string,
-      last: string,
-    },
-    address?: string,
-  }[]) => {
+  socket.on('allpins', (pins: Pin[]) => {
+    console.log('Received all pins');
     map.layers.removeAll();
     map.add(getPinLayer(pins));
   });

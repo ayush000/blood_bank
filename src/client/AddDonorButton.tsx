@@ -5,8 +5,7 @@ import { view } from './Map';
 import { DONOR_LABEL_ADD, LABEL_CANCEL } from './constants';
 import { DonorDialog } from './DonorForm';
 import Locator = require('esri/tasks/Locator');
-import * as io from 'socket.io-client';
-const socket = io('http://localhost:3000');
+
 // require('./Pins');
 // const socket = require('socket.io-client')('http://localhost:3000');
 
@@ -109,4 +108,3 @@ class Button extends React.Component<MyProps, MyState> {
 }
 
 export default Button;
-export { socket };

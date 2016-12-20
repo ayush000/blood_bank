@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Map from './Map';
-import Interaction from './Interaction';
+import AddDonorButton from './AddDonorButton';
+// import UpdateDonorButton from './UpdateDonorButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import * as injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
@@ -9,7 +10,7 @@ function App() {
   return (
     <div>
       <MuiThemeProvider>
-        <Interaction />
+        <AddDonorButton />
       </MuiThemeProvider>
     </div>
   );
