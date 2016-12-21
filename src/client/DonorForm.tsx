@@ -6,8 +6,6 @@ import RaisedButton from 'material-ui/RaisedButton';
 import FormsySelect from 'formsy-material-ui/lib/FormsySelect';
 import MenuItem from 'material-ui/MenuItem';
 import { Table, TableBody, TableRow, TableRowColumn } from 'material-ui/Table';
-import TextField from 'material-ui/TextField';
-// import * as url from 'url';
 
 import { checkStatus, parseJSON } from '../shared/commonfunction';
 import { errorMessages, bloodGroups } from './constants';
@@ -247,14 +245,11 @@ class DonorDialog extends React.Component<DialogProps, DialogState> {
                             </TableRow><TableRow>
                                 <TableRowColumn>IP Address</TableRowColumn>
                                 <TableRowColumn>{this.state.ip}</TableRowColumn>
-                            </TableRow><TableRow>
-                                <TableRowColumn>Unique key (to edit)</TableRowColumn>
-                                <TableRowColumn>
-                                    <TextField defaultValue={this.state.id} />
-                                </TableRowColumn>
                             </TableRow>
                         </TableBody>
                     </Table>
+                    To edit your listing, goto <a href={`http://localhost:3000/donor/edit/${this.state.id}`}>
+                        http://localhost:3000/donor/edit/${this.state.id}</a>.
                 </Dialog>
             </div >
         );

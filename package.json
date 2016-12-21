@@ -15,6 +15,7 @@
     "@types/mongoose": "^4.7.1",
     "@types/morgan": "^1.7.32",
     "@types/node": "^6.0.52",
+    "@types/pug": "^2.0.3",
     "@types/react": "^0.14.55",
     "@types/react-dom": "^0.14.19",
     "@types/react-tap-event-plugin": "^0.0.30",
@@ -35,6 +36,7 @@
     "mongodb": "^2.2.16",
     "mongoose": "^4.7.3",
     "morgan": "^1.7.0",
+    "pug": "^2.0.0-beta6",
     "react": "^15.4.1",
     "react-copy-to-clipboard": "^4.2.3",
     "react-dom": "^15.4.1",
@@ -44,8 +46,9 @@
     "source-map-loader": "^0.1.5"
   },
   "scripts": {
-    "start": "concurrently --kill-others \"tsc\"  \"webpack\" && node lib/server/index.js",
+    "start": "concurrently \"tsc\"  \"webpack\" && node lib/server/index.js",
     "node": "tsc && node lib/server/index.js",
+    "nodewatch": "tsc -w",
     "watch": "concurrently --kill-others \"tsc -w\"  \"webpack -w\""
   },
   "devDependencies": {

@@ -35,14 +35,50 @@ const listener = app.listen(3000, () => {
 });
 const io = socket_io(listener);
 
-
-app.set('view options', { layout: false });
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, '../../views'));
 app.use(express.static(path.join(__dirname, '../../dist')));
 
 app.get('/robot', (req, res) => {
-  console.log(req.db);
-  console.log(req.date);
-  res.send(req.db);
+  console.log('qprs');
+  res.send('Hi');
+});
+
+app.get('/donor/edit/:uni_key', (req, res) => {
+  donorModel.findOne({ _id: req.params.uni_key }).
+    then(donor => {
+      if (typeof donor !== 'object' || Object.keys(donor).length === 0) {
+        return res.status(404).send({error: 'Point not found'});
+      }
+      let result = { ...donor.toObject(), uni_key: req.params.uni_key };
+      console.log(result);
+      res.render('update', result);
+    }).catch(err => { res.status(500).send(err); });
+});
+
+app.post('/donor/update', (req, res) => {
+  console.log(req.body);
+  donorModel.update({ _id: req.body.id }, {
+    name:
+    {
+      first: req.body.firstname,
+      last: req.body.lastname,
+    },
+    bloodgroup: req.body.bloodgroup,
+    contact: req.body.contact,
+    email: req.body.email,
+  }).then(() => {
+    loadPins(io);
+    res.send('updated...');
+  });
+});
+
+app.post('/donor/delete', (req, res) => {
+  donorModel.find({ _id: req.body.id }).remove()
+    .then(() => {
+      loadPins(io);
+      res.send('removed');
+    });
 });
 
 app.post('/donor/new', (req, res) => {

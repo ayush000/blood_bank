@@ -46,6 +46,7 @@ export default function () {
   // });
 
   socket.on('allpins', (pins: Pin[]) => {
+
     console.log('Received all pins');
     map.layers.removeAll();
     map.add(getPinLayer(pins));
