@@ -60,5 +60,5 @@ jspm_packages
 # Yarn Integrity file
 .yarn-integrity
 lib/
-dist/js/bundle.js
-dist/js/bundle.js.map
+dist/js/main.bundle.js
+dist/js/main.bundle.js.map

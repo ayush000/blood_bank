@@ -1,10 +1,15 @@
+var BitBarWebpackProgressPlugin = require("bitbar-webpack-progress-plugin");
 
 module.exports = {
   entry: './src/client/index.tsx',
   output: {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: `${__dirname}/dist/js`,
+    libraryTarget: 'amd',
   },
+  plugins: [
+    new BitBarWebpackProgressPlugin()
+  ],
 
   // Enable sourcemaps for debugging webpack's output.
   devtool: 'source-map',
@@ -25,13 +30,20 @@ module.exports = {
       { test: /\.js$/, loader: 'source-map-loader' },
     ],
   },
-
   // When importing a module whose path matches one of the following, just
   // assume a corresponding global variable exists and use that instead.
   // This is important because it allows us to avoid bundling all of our
   // dependencies, which allows browsers to cache those libraries between builds.
-  externals: {
-    react: 'React',
-    'react-dom': 'ReactDOM',
-  },
+  externals: [
+    function (context, request, callback) {
+      if (/^dojo/.test(request) ||
+        /^dojox/.test(request) ||
+        /^dijit/.test(request) ||
+        /^esri/.test(request)
+      ) {
+        return callback(null, `amd ${request}`);
+      }
+      return callback();
+    },
+  ],
 };

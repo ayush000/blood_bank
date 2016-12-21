@@ -4,9 +4,11 @@
     "rootDir": "src",
     "outDir": "lib",
     "typeRoots": [
-      "node_modules/@types"
+      "node_modules/@types",
+      "./typings/globals"
     ],
     "sourceMap": true,
-    "jsx": "react"
+    "jsx": "react",
+    "noUnusedLocals": true
   }
 }

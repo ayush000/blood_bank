@@ -1,9 +1,12 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import { view } from './Map';
 
-import { Hello } from "./Hello";
+import App from './App';
 
+const node = document.createElement('div');
+view.ui.add(node, 'bottom-right');
 ReactDOM.render(
-    <Hello compiler="TypeScript" framework="React" />,
-    document.getElementById("example")
+    <App />,
+    node,
 );

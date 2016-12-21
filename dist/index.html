@@ -3,19 +3,21 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Hello React!</title>
+  <title>Blood donor app!</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="stylesheet" href="https://js.arcgis.com/4.1/esri/css/main.css">
 </head>
 
 <body>
   <div id="example"></div>
 
   <!-- Dependencies -->
-  <script src="https://unpkg.com/react@15/dist/react.js"></script>
-  <script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script>
-
-
-  <!-- Main -->
-  <script src="./js/bundle.js"></script>
+  <script src="https://js.arcgis.com/4.1/" data-dojo-config="async: true"></script>
+  <script type="text/javascript">
+    require(["./js/main.bundle.js"], function (main) { });
+  </script>
 </body>
+<div id="viewDiv"></div>
 
 </html>

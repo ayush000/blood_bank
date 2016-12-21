@@ -1,0 +1,30 @@
+form(action='/donor/update', method='POST')
+  | First name:
+  br
+  input(required, type='text', name='firstname', value=name.first)
+  br
+  |     Last name:
+  br
+  input(required, type='text', name='lastname', value=name.last)
+  br
+  |     Blood group:
+  br
+  input(required, type='text', name='bloodgroup', value=bloodgroup)
+  br
+  |     Email: 
+  br
+  input(required, type='text', name='email', value=email)
+  br
+  |     Contact:
+  br
+  input(required, type='text', name='contact', value=contact)
+  br
+  |     Unique key:
+  br
+  input(required, type='text', name='id', value=uni_key, readonly)
+  br
+  br
+  input(required, type='submit', value='Submit')
+form(action='/donor/delete', method='POST')
+  input(required, type='hidden', name='id', value=uni_key)
+  input(required, type='submit', value='delete')
