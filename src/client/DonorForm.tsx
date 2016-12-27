@@ -145,53 +145,45 @@ class DonorDialog extends React.Component<DialogProps, DialogState> {
     openSuccessDialogBox = () => {
         this.setState({ successDialogBoxOpen: true } as DialogState);
     }
-    submitForm = (data) => {
-        this.props.closeDialogHandler();
-        // Create new donor from data entered in form
-        const storeFormData = (formData, ip) => {
-            const options = {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    ...formData,
-                    latitude: this.props.latitude,
-                    longitude: this.props.longitude,
-                    address: this.props.address,
-                    ip: ip,
-                }),
-            };
-            fetch('/donor/new', options)
-                .then(checkStatus)
-                .then(parseJSON)
-                .then(urlresponse => {
-                    this.props.disableAddDonor();
-                    this.setState({
-                        name: `${urlresponse.name.first} ${urlresponse.name.last}`,
-                        bloodgroup: urlresponse.bloodgroup,
-                        email: urlresponse.email,
-                        contact: urlresponse.contact,
-                        address: urlresponse.address,
-                        ip: urlresponse.ip,
-                        id: urlresponse._id,
-                    } as DialogState);
-                    this.openSuccessDialogBox();
-                }).catch(err => {
-                    console.log(err);
-                });
-        };
-        // Get user's IP address
-        fetch('http://freegeoip.net/json/')
-            .then(checkStatus)
-            .then(parseJSON)
-            .then(ipResponse => {
-                storeFormData(data, ipResponse.ip);
-            }).catch(err => {
-                console.log(err);
-                storeFormData(data, null);
-            });
 
+    submitForm = async (data) => {
+        this.props.closeDialogHandler();
+        let ip: string | null;
+        try {
+            ip = (await parseJSON(checkStatus(await fetch('http://freegeoip.net/json/')))).ip;
+        } catch (err) {
+            console.log(err);
+            ip = null;
+        }
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                ...data,
+                latitude: this.props.latitude,
+                longitude: this.props.longitude,
+                address: this.props.address,
+                ip: ip,
+            }),
+        };
+        try {
+            const urlresponse: any = await parseJSON(checkStatus(await fetch('/donor/new', options)));
+            this.setState({
+                name: `${urlresponse.name.first} ${urlresponse.name.last}`,
+                bloodgroup: urlresponse.bloodgroup,
+                email: urlresponse.email,
+                contact: urlresponse.contact,
+                address: urlresponse.address,
+                ip: urlresponse.ip,
+                id: urlresponse._id,
+            } as DialogState);
+            this.props.disableAddDonor();
+        } catch (err) {
+            // TODO: Show error dialog
+            console.log(err);
+        }
     }
     render() {
         return (
