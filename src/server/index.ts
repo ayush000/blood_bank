@@ -11,7 +11,8 @@ import * as config from 'config';
 
 import { writeLog } from '../shared/commonfunction';
 import donorModel from './donorModel';
-const MONGODB_URL: string = config.get('MONGODB_URL');
+
+const MONGODB_URL: string = config.get('MONGODB_URL') as string;
 require('mongoose').Promise = global.Promise;
 
 
