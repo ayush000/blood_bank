@@ -5,7 +5,7 @@ const donorSchema = new mongoose.Schema({
         last: { type: String, required: true, trim: true },
     },
     contact: { type: String, required: true, trim: true },
-    email: { type: String, required: true, trim: true },
+    email: { type: String, required: true, trim: true, unique: true },
     bloodgroup: { type: String, required: true },
     location: {
         type: { type: String, default: 'Point' },

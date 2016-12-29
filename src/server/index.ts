@@ -7,14 +7,15 @@ import expressValidator = require('express-validator');
 import * as mongoose from 'mongoose';
 import * as socket_io from 'socket.io';
 import * as util from 'util';
+import * as config from 'config';
 
+import { writeLog } from '../shared/commonfunction';
 import donorModel from './donorModel';
-import { MONGODB_URL } from './constants';
+const MONGODB_URL: string = config.get('MONGODB_URL');
 require('mongoose').Promise = global.Promise;
 
 
 const app = express();
-app.use(logger('dev'));
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
@@ -25,13 +26,16 @@ mongoose.connect(MONGODB_URL, (err) => {
   if (err) {
     throw err;
   }
-  console.log('Connected to Mongo!');
+  writeLog('Connected to Mongo!');
 });
-mongoose.set('debug', true);
+if (process.env.NODE_ENV !== 'test') {
+  app.use(logger('dev'));
+  mongoose.set('debug', true);
+}
 
 
 const listener = app.listen(3000, () => {
-  console.log(`Listening on port ${listener.address().port}`);
+  writeLog(`Listening on port ${listener.address().port}`);
 });
 const io = socket_io(listener);
 
@@ -40,24 +44,27 @@ app.set('views', path.join(__dirname, '../../views'));
 app.use(express.static(path.join(__dirname, '../../dist')));
 
 app.get('/robot', (req, res) => {
-  console.log('qprs');
+
   res.send('Hi');
 });
 
 app.get('/donor/edit/:uni_key', (req, res) => {
-  donorModel.findOne({ _id: req.params.uni_key }).
+  if (!mongoose.Types.ObjectId.isValid(req.params.uni_key)) {
+    return res.status(404).send({ error: 'Point not found' });
+  }
+  donorModel.findById(req.params.uni_key).
     then(donor => {
-      if (typeof donor !== 'object' || Object.keys(donor).length === 0) {
-        return res.status(404).send({error: 'Point not found'});
+      if (typeof donor === 'undefined') {
+        return res.status(404).send({ error: 'Point not found' });
       }
       let result = { ...donor.toObject(), uni_key: req.params.uni_key };
-      console.log(result);
+
       res.render('update', result);
     }).catch(err => { res.status(500).send(err); });
 });
 
 app.post('/donor/update', (req, res) => {
-  console.log(req.body);
+
   donorModel.update({ _id: req.body.id }, {
     name:
     {
@@ -103,8 +110,8 @@ app.post('/donor/new', (req, res) => {
   } = req.body;
   req.getValidationResult().then(function (valid_result) {
     if (!valid_result.isEmpty()) {
-      console.log('There have been validation errors: ' + util.inspect(valid_result.array()));
-      res.status(400).send(valid_result);
+      writeLog('There have been validation errors: ' + util.inspect(valid_result.array()));
+      res.status(400).send(valid_result.array());
       return;
     }
     const donorObj = {
@@ -127,12 +134,12 @@ app.post('/donor/new', (req, res) => {
       res.send(save_result);
       return io;
     }).then(loadPins)
-      .catch(err => { throw err; });
+      .catch(err => { res.status(400).send(err); });
   });
 });
 
 io.on('connection', function (socket) {
-  console.log('A user just connected');
+  writeLog('A user just connected');
   loadPins(socket);
 });
 
@@ -141,3 +148,5 @@ function loadPins(socket) {
     socket.emit('allpins', donors);
   }).catch(err => { throw err; });
 }
+
+export default app;
