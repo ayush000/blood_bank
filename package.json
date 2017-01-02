@@ -57,8 +57,7 @@
     "tslint": "^4.1.1"
   },
   "scripts": {
-    "start": "tsc && webpack && node lib/server/index.js",
-    "dev": "concurrently \"tsc\"  \"webpack\" && node lib/server/index.js",
+    "start": "NODE_ENV=production concurrently \"tsc\"  \"webpack\" && node lib/server/index.js",
     "node": "tsc && node lib/server/index.js",
     "nodewatch": "tsc -w",
     "watch": "concurrently --kill-others \"tsc -w\"  \"webpack -w\"",

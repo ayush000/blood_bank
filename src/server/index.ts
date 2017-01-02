@@ -12,7 +12,7 @@ import * as config from 'config';
 import { writeLog } from '../shared/commonfunction';
 import donorModel from './donorModel';
 
-const MONGODB_URL: string = config.get('MONGODB_URL') as string;
+const MONGODB_URL: string = process.env.MONGODB_URL || config.get('MONGODB_URL') as string;
 require('mongoose').Promise = global.Promise;
 
 
