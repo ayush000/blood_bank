@@ -11,4 +11,10 @@ function checkStatus(response) {
 function parseJSON(response) {
     return response.json();
 }
-export { checkStatus, parseJSON };
+
+function writeLog(str) {
+    if (process.env.NODE_ENV !== 'test') {
+        console.log(str);
+    }
+}
+export { checkStatus, parseJSON, writeLog };
