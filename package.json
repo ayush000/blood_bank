@@ -49,10 +49,13 @@
     "socket.io-client": "^1.7.2",
     "source-map-loader": "^0.1.5",
     "supertest": "^2.0.1",
-    "supertest-as-promised": "^4.0.2"
+    "supertest-as-promised": "^4.0.2",
+    "typescript": "next",
+    "webpack": "^1.14.0"
   },
   "scripts": {
-    "start": "concurrently \"tsc\"  \"webpack\" && node lib/server/index.js",
+    "start": "tsc && webpack && node lib/server/index.js",
+    "dev": "concurrently \"tsc\"  \"webpack\" && node lib/server/index.js",
     "node": "tsc && node lib/server/index.js",
     "nodewatch": "tsc -w",
     "watch": "concurrently --kill-others \"tsc -w\"  \"webpack -w\"",
@@ -61,9 +64,7 @@
   "devDependencies": {
     "ava": "^0.17.0",
     "concurrently": "^3.1.0",
-    "tslint": "^4.1.1",
-    "typescript": "next",
-    "webpack": "^1.14.0"
+    "tslint": "^4.1.1"
   },
   "jspm": {
     "directories": {
