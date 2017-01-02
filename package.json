@@ -51,7 +51,8 @@
     "supertest": "^2.0.1",
     "supertest-as-promised": "^4.0.2",
     "typescript": "next",
-    "webpack": "^1.14.0"
+    "webpack": "^1.14.0",
+    "ava": "^0.17.0"
   },
   "scripts": {
     "start": "tsc && webpack && node lib/server/index.js",
@@ -62,7 +63,6 @@
     "test": "tsc && ava"
   },
   "devDependencies": {
-    "ava": "^0.17.0",
     "concurrently": "^3.1.0",
     "tslint": "^4.1.1"
   },
