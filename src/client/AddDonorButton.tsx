@@ -6,9 +6,6 @@ import { DONOR_LABEL_ADD, LABEL_CANCEL } from './constants';
 import { DonorDialog } from './DonorForm';
 import Locator = require('esri/tasks/Locator');
 
-// require('./Pins');
-// const socket = require('socket.io-client')('http://localhost:3000');
-
 interface MyProps { }
 interface MyState {
     isDonor: boolean;

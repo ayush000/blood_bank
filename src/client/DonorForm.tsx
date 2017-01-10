@@ -8,9 +8,8 @@ import MenuItem from 'material-ui/MenuItem';
 import { Table, TableBody, TableRow, TableRowColumn } from 'material-ui/Table';
 
 import { checkStatus, parseJSON } from '../shared/commonfunction';
-import { errorMessages, bloodGroups } from './constants';
+import { baseURL, errorMessages, bloodGroups } from './constants';
 
-// const baseUrl: string = 'http://localhost:3000/';
 interface MyProps {
     address: string;
     latitude: number;
@@ -47,7 +46,7 @@ class DonorForm extends React.Component<MyProps, MyState> {
             <Formsy.Form
                 onValid={this.enableButton}
                 onInvalid={this.disableButton}
-                onValidSubmit={(data) => { this.props.submitForm(data); } }
+                onValidSubmit={(data) => { this.props.submitForm(data); }}
                 onInvalidSubmit={this.notifyFormError}>
                 <FormsyText
                     name="fname"
@@ -56,7 +55,7 @@ class DonorForm extends React.Component<MyProps, MyState> {
                     required
                     hintText="What is your first name?"
                     floatingLabelText="First name"
-                    />
+                />
                 <FormsyText
                     name="lname"
                     validations="isAlpha"
@@ -64,7 +63,7 @@ class DonorForm extends React.Component<MyProps, MyState> {
                     required
                     hintText="What is your last name?"
                     floatingLabelText="Last name"
-                    />
+                />
                 <FormsyText
                     name="contact"
                     validations={{
@@ -76,7 +75,7 @@ class DonorForm extends React.Component<MyProps, MyState> {
                     required
                     hintText="What is your contact number?"
                     floatingLabelText="Contact number"
-                    />
+                />
                 <FormsyText
                     name="email"
                     validations="isEmail"
@@ -84,7 +83,7 @@ class DonorForm extends React.Component<MyProps, MyState> {
                     required
                     hintText="What is your email address?"
                     floatingLabelText="Email"
-                    />
+                />
                 <FormsySelect
                     name="bloodgroup"
                     value=""
@@ -98,7 +97,7 @@ class DonorForm extends React.Component<MyProps, MyState> {
                     type="submit"
                     label="Submit"
                     disabled={!this.state.canSubmit}
-                    />
+                />
             </Formsy.Form>
         );
     }
@@ -196,7 +195,7 @@ class DonorDialog extends React.Component<DialogProps, DialogState> {
                     open={this.props.dialogBoxOpen}
                     onRequestClose={() => {
                         this.props.closeDialogHandler();
-                    } }>
+                    }}>
                     <DonorForm address={this.props.address}
                         disableAddDonor={this.props.disableAddDonor}
                         closeDialogHandler={this.props.closeDialogHandler}
@@ -204,7 +203,7 @@ class DonorDialog extends React.Component<DialogProps, DialogState> {
                         latitude={this.props.latitude}
                         longitude={this.props.longitude}
                         submitForm={this.submitForm}
-                        />
+                    />
                 </Dialog>
                 <Dialog
                     contentStyle={{ width: '100%', maxWidth: '470px' }}
@@ -240,8 +239,8 @@ class DonorDialog extends React.Component<DialogProps, DialogState> {
                             </TableRow>
                         </TableBody>
                     </Table>
-                    To edit your listing, goto <a href={`http://localhost:3000/donor/edit/${this.state.id}`}>
-                        http://localhost:3000/donor/edit/${this.state.id}</a>.
+                    To edit your listing, goto <a href={`${baseURL}/donor/edit/${this.state.id}`}>
+                        {`${baseURL}/donor/edit/${this.state.id}`}</a>.
                 </Dialog>
             </div >
         );

@@ -20,3 +20,4 @@ export const bloodGroups: Object = {
     'AB+': [],
     'AB-': [],
 };
+export const baseURL: string = location.origin.replace(/^https/, 'http');
