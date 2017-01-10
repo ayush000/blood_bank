@@ -16,7 +16,6 @@ interface MyProps {
     longitude: number;
     closeDialogHandler: Function;
     disableAddDonor: Function;
-    openSuccessDialogBox: Function;
     submitForm: Function;
 }
 interface MyState { canSubmit: boolean; }
@@ -110,8 +109,6 @@ interface DialogProps {
     latitude: number;
     longitude: number;
     disableAddDonor: Function;
-
-
 }
 interface DialogState {
     successDialogBoxOpen: boolean;
@@ -179,6 +176,7 @@ class DonorDialog extends React.Component<DialogProps, DialogState> {
                 id: urlresponse._id,
             } as DialogState);
             this.props.disableAddDonor();
+            this.openSuccessDialogBox();
         } catch (err) {
             // TODO: Show error dialog
             console.log(err);
@@ -199,7 +197,6 @@ class DonorDialog extends React.Component<DialogProps, DialogState> {
                     <DonorForm address={this.props.address}
                         disableAddDonor={this.props.disableAddDonor}
                         closeDialogHandler={this.props.closeDialogHandler}
-                        openSuccessDialogBox={this.openSuccessDialogBox}
                         latitude={this.props.latitude}
                         longitude={this.props.longitude}
                         submitForm={this.submitForm}
@@ -211,7 +208,7 @@ class DonorDialog extends React.Component<DialogProps, DialogState> {
                     title={`Congratulations. You registered`}
                     modal={false}
                     open={this.state.successDialogBoxOpen}
-                    onRequestClose={this.closeSuccessDialogBox}>
+                    onRequestClose={() => { this.closeSuccessDialogBox(); }}>
                     <Table selectable={false}>
                         <TableBody displayRowCheckbox={false}>
                             <TableRow>
